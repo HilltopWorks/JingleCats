@@ -1,0 +1,42 @@
+PXLs with in-place editing required:
+BOX_PXL x 1
+FEF0_PXL x 1
+LOD0_PXL x 1
+LOD1_PXL x 1
+OPEN_PXL x 1
+OPT_PXL x 5 (some reuse)
+PIX x 4
+REC0_PXL x 1
+REC1_PXL x 1
+SAV0_PXL x 1 (reused?)
+SAV1_PXL x 1 (reused?)
+SEL1_PXL x 1
+ST0_PXL
+ST1_PXL
+ST2_PXL
+ST3_PXL
+ST4_PXL
+ST5_PXL
+ST6_PXL
+ST7_PXL
+ST8_PXL
+STAT_PXL
+SYS0_PXL (Reused?)
+SYS1_PXL
+TTL_PXL x 2
+WAI0_PXL (Reused?)
+
+PXLs with ANM editing required:
+GOT IT===FAIL_PXL x 1
+NO??? ===FEF0/1/2/3/4 FEM0/1/2/3/4 x 1
+GOT IT===PIX x 1
+GOT IT===SEL0_PXL x 6 (mostly in place)
+
+
+COMPLETE:
+GUID_PXL
+-ANM at ANM/GUID_PXL.PAC 0xC
+
+
+FEFs identical:
+2,4 - 3,0 - 1 #The image with text is same between them!

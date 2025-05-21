@@ -1,0 +1,218 @@
+//Header
+!FontDef [BLACK]: TPF=0, ABR=3, ABE=0, CSN=12, CLX=12, CLY=508
+!FontDef [BLUE]: TPF=0, ABR=3, ABE=0, CSN=12, CLX=12, CLY=509
+!FontDef [RED]: TPF=0, ABR=3, ABE=0, CSN=12, CLX=12, CLY=511
+!ImgDef [DOWN_ARROW_BLUE]: TPN=8, BNO=1, TPF=0, CSN=0, CLX=0, CLY=511, ABR=3, ABE=0, u=208, v=112, width=16, height=16, xDelta=0, yDelta=-2, RSZ=0, ROT=0
+!ImgDef [DOWN_ARROW_RED]: TPN=8, BNO=1, TPF=0, CSN=0, CLX=0, CLY=496, ABR=3, ABE=0, u=208, v=112, width=16, height=16, xDelta=0, yDelta=-2, RSZ=0, ROT=0
+!ImgDef [CIRCLE_BUTTON]: TPN=8, BNO=1, TPF=0, CSN=12, CLX=12, CLY=508, ABR=3, ABE=0, u=0, v=16, width=16, height=16, xDelta=0, yDelta=-2, RSZ=0, ROT=0
+!ImgDef [PLAY_ICON]: TPN=8, BNO=1, TPF=0, CSN=2, CLX=2, CLY=504, ABR=3, ABE=1, u=160, v=88, width=24, height=24, xDelta=0, yDelta=-2, RSZ=0, ROT=0
+!ImgDef [FOOD_ICON]: TPN=8, BNO=1, TPF=0, CSN=2, CLX=2, CLY=504, ABR=3, ABE=1, u=160, v=112, width=24, height=22, xDelta=0, yDelta=-2, RSZ=0, ROT=0
+!ImgDef [STATUS_ICON]: TPN=8, BNO=1, TPF=0, CSN=2, CLX=2, CLY=506, ABR=3, ABE=1, u=184, v=88, width=24, height=24, xDelta=0, yDelta=-2, RSZ=0, ROT=0
+!ImgDef [LOVE_ATTACK_ICON]: TPN=8, BNO=1, TPF=0, CSN=2, CLX=2, CLY=506, ABR=3, ABE=1, u=184, v=112, width=24, height=24, xDelta=0, yDelta=-2, RSZ=0, ROT=0
+
+<<<SEQUENCE 1>>> StartPoint=(0,24) Keeps=[0,4,2]
+Welcome to the home of the [BLUE]Jingle Cats[BLACK]!
+
+<<<SEQUENCE 2>>> StartPoint=(0,24)
+[BLUE]Jingle Cats[BLACK] is a game about getting
+[BLUE]cats[BLACK] to love each other.
+
+<<<SEQUENCE 3>>> StartPoint=(0,24)
+By getting the two [BLUE]Starring Cats[BLACK] to play
+together, their [BLUE]Love[BLACK] will increase.
+
+<<<SEQUENCE 4>>> StartPoint=(0,24)
+Clear the stage by initiating a
+successful [BLUE]Love Attack[BLACK].
+
+<<<SEQUENCE 5>>> StartPoint=(0,24)
+The [BLUE]Lead Cat[BLACK] is indicated by [DOWN_ARROW_BLUE],
+and the [BLUE]Partner Cat[BLACK] is indicated by [DOWN_ARROW_RED].
+
+<<<SEQUENCE 6>>> StartPoint=(0,24)
+[RED]Move[BLACK] the [BLUE]Cursor[BLACK] or press the
+[RED]L1[BLACK] and [RED]R1[BLACK] buttons to scroll the screen.
+
+<<<SEQUENCE 7>>> StartPoint=(0,24)
+[RED]Move[BLACK] the [BLUE]Cursor[BLACK] to the top of the
+screen to reveal the [BLUE]Command Menu[BLACK].
+
+<<<SEQUENCE 8>>> StartPoint=(0,24)
+Press [CIRCLE_BUTTON] to select an option
+from the [BLUE]Command Menu[BLACK].
+
+<<<SEQUENCE 9>>> StartPoint=(0,24)
+That's the [BLUE]Petting Cursor[BLACK].
+
+<<<SEQUENCE 10>>> StartPoint=(0,24)
+If you have upset a [BLUE]Cat[BLACK], use the [BLUE]Petting
+Cursor[BLACK] on them to calm them down.
+
+<<<SEQUENCE 11>>> StartPoint=(0,24)
+That's the [BLUE]Grab Cursor[BLACK].
+
+<<<SEQUENCE 12>>> StartPoint=(0,24)
+Use it to pick up [BLUE]Cats[BLACK] and [BLUE]Objects[BLACK].
+
+<<<SEQUENCE 13>>> StartPoint=(0,24)
+[BLUE]Cats[BLACK] tend not to like being
+picked up, so watch out!
+
+<<<SEQUENCE 14>>> StartPoint=(0,24)
+That's the [BLUE]Toy Hammer[BLACK].
+
+<<<SEQUENCE 15>>> StartPoint=(0,24)
+Try to avoid using it too much on them...
+
+<<<SEQUENCE 16>>> StartPoint=(0,24)
+That's the [BLUE]Fox Tail[BLACK].
+
+<<<SEQUENCE 17>>> StartPoint=(0,24)
+If both of the [BLUE]Starring Cats[BLACK] play with it
+together, their [BLUE]Love[BLACK] will increase.
+
+<<<SEQUENCE 18>>> StartPoint=(0,24)
+If they play enough, they'll
+enter [BLUE]Special Time[BLACK].
+
+<<<SEQUENCE 19>>> StartPoint=(0,24)
+Look at those happy smiles!
+They're getting along well!
+
+<<<SEQUENCE 20>>> StartPoint=(3,24)
+Keep at it with the [BLUE]Fox Tail[BLACK]!
+
+<<<SEQUENCE 21>>> StartPoint=(0,24)
+They've entered [BLUE]Special Time[BLACK]!
+
+<<<SEQUENCE 22>>> StartPoint=(0,24)
+During [BLUE]Special Time[BLACK], the [BLUE]Starring Cats[BLACK] will
+play together without the [BLUE]Fox Tail[BLACK].
+
+<<<SEQUENCE 23>>> StartPoint=(0,24)
+Use the [PLAY_ICON] button to drop a [BLUE]Toy[BLACK]
+and watch them frolic together!
+
+<<<SEQUENCE 24>>> StartPoint=(1,24)
+Keep an eye on the [BLUE]Love Meter[BLACK]!
+
+<<<SEQUENCE 25>>> StartPoint=(0,24)
+That's the [BLUE]Toy Menu[BLACK].
+
+<<<SEQUENCE 26>>> StartPoint=(0,24)
+Drop a [BLUE]Toy[BLACK] during [BLUE]Special Time[BLACK] to
+max out the [BLUE]Love Meter[BLACK]!
+
+<<<SEQUENCE 27>>> StartPoint=(0,24)
+Press [CIRCLE_BUTTON] on one quick to make the
+most of [BLUE]Special Time[BLACK]!
+
+<<<SEQUENCE 28>>> StartPoint=(0,24)
+That's the [BLUE]Food Menu[BLACK].
+
+<<<SEQUENCE 29>>> StartPoint=(0,24)
+You can feed the [BLUE]cats[BLACK] a meal [RED]twice a day[BLACK],
+and give them a snack [RED]once a day[BLACK].
+
+<<<SEQUENCE 30>>> StartPoint=(0,24)
+Press [CIRCLE_BUTTON] on a food item to
+drop it down for the [BLUE]cats[BLACK].
+
+<<<SEQUENCE 31>>> StartPoint=(0,24)
+That's the [BLUE]Love Attack[BLACK].
+
+<<<SEQUENCE 32>>> StartPoint=(0,24)
+The [BLUE]Lead Cat[BLACK] will confess their feelings,
+and if accepted, you [BLUE]clear the stage[BLACK]!
+
+<<<SEQUENCE 33>>> StartPoint=(0,24)
+There are a number of things that can
+cause a [BLUE]Love Attack[BLACK] to [RED]fail[BLACK].
+
+<<<SEQUENCE 34>>> StartPoint=(0,24)
+Firstly, the [BLUE]Love[BLACK] meter needs to
+be filled up high for it to succeed.
+
+<<<SEQUENCE 35>>> StartPoint=(0,24)
+However, if the [BLUE]cat's[BLACK] other [BLUE]stats[BLACK]
+are too low, the [BLUE]Love Attack[BLACK] will [RED]fail[BLACK].
+
+<<<SEQUENCE 36>>> StartPoint=(0,24)
+You can [RED]check[BLACK] the cats' stats
+at any time.
+
+<<<SEQUENCE 37>>> StartPoint=(0,24)
+[BLUE]Mood[BLACK] and [BLUE]Trust[BLACK] can be raised
+by [RED]petting[BLACK] the [BLUE]cats[BLACK].
+
+<<<SEQUENCE 38>>> StartPoint=(0,24)
+[RED]Feed[BLACK] them regularly to keep
+their [BLUE]Tummy[BLACK] full.
+
+<<<SEQUENCE 39>>> StartPoint=(0,24)
+If their [BLUE]Cleanliness[BLACK] drops, place them in
+the [RED]Bath Tub[BLACK] to give them a wash.
+
+<<<SEQUENCE 40>>> StartPoint=(0,24)
+The [BLUE]cats[BLACK] will let you know they're hungry
+by [BLUE]pawing[BLACK] at the [RED]Fridge[BLACK].
+
+<<<SEQUENCE 41>>> StartPoint=(0,24)
+Access the [BLUE]food[BLACK] by pressing the [FOOD_ICON]
+in the [BLUE]Command Menu[BLACK].
+
+<<<SEQUENCE 42>>> StartPoint=(0,24)
+The [BLUE]cats[BLACK] will scratch themselves by the
+[RED]Bath Tub[BLACK] when they're [BLUE]dirty[BLACK].
+
+<<<SEQUENCE 43>>> StartPoint=(0,24)
+So [BLUE]pick up[BLACK] and [BLUE]drop[BLACK] them in the [RED]Tub[BLACK]!
+
+<<<SEQUENCE 44>>> StartPoint=(0,24)
+Use the [BLUE]Grab Cursor[BLACK] to lift them above
+the [RED]Bath Tub[BLACK], and then release.
+
+<<<SEQUENCE 45>>> StartPoint=(0,24)
+[BLUE]Cats[BLACK] cannot leave the [RED]Bath Tub[BLACK]
+on their own.
+
+<<<SEQUENCE 46>>> StartPoint=(0,24)
+Once they've finished [BLUE]Shampooing[BLACK],
+take them out of the Bath Tub.
+
+<<<SEQUENCE 47>>> StartPoint=(0,24)
+Has the [BLUE]Love Meter[BLACK] filled up?
+
+<<<SEQUENCE 48>>> StartPoint=(0,24)
+Then it's time for a [BLUE]Love Attack[BLACK]!
+
+<<<SEQUENCE 49>>> StartPoint=(0,24)
+...But before that, take a look at the
+[BLUE]Status Screen[BLACK] [STATUS_ICON].
+
+<<<SEQUENCE 50>>> StartPoint=(0,24)
+Even if the [BLUE]Love Meter[BLACK] is full, the [BLUE]Attack[BLACK]
+will [RED]fail[BLACK] if the other stats are too low.
+
+<<<SEQUENCE 51>>> StartPoint=(0,24)
+If all the stats look okay, press the [LOVE_ATTACK_ICON]
+in the [BLUE]Command Menu[BLACK] to start the [BLUE]Attack[BLACK]!
+
+<<<SEQUENCE 52>>> StartPoint=(0,24)
+The [BLUE]cats[BLACK] are [RED]hungry[BLACK]!
+
+<<<SEQUENCE 53>>> StartPoint=(0,24)
+Don't forget to [BLUE]feed[BLACK] them!
+
+<<<SEQUENCE 54>>> StartPoint=(0,24)
+Select [FOOD_ICON] in the Command Menu to feed them.
+
+<<<SEQUENCE 55>>> StartPoint=(0,24)
+The [BLUE]Love Meter[BLACK] hasn't been increasing.
+
+<<<SEQUENCE 56>>> StartPoint=(0,24)
+Use the [BLUE]Fox Tail[BLACK] to get both cats to play together.
+
+<<<SEQUENCE 57>>> StartPoint=(0,24)
+During [BLUE]Special Time[BLACK], the [BLUE]Love Meter[BLACK]
+will [RED]skyrocket[BLACK]!
