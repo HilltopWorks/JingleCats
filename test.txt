@@ -10,7 +10,7 @@
 !ImgDef [STATUS_ICON]: TPN=8, BNO=1, TPF=0, CSN=2, CLX=2, CLY=506, ABR=3, ABE=1, u=184, v=88, width=24, height=24, xDelta=0, yDelta=-2, RSZ=0, ROT=0
 !ImgDef [LOVE_ATTACK_ICON]: TPN=8, BNO=1, TPF=0, CSN=2, CLX=2, CLY=506, ABR=3, ABE=1, u=184, v=112, width=24, height=24, xDelta=0, yDelta=-2, RSZ=0, ROT=0
 
-<<<SEQUENCE 1>>> StartPoint=(0,24) Keeps=[0,4,2]
+<<<SEQUENCE 1>>> StartPoint=(0,24)
 Welcome to the home of the [BLUE]Jingle Cats[BLACK]!
 
 <<<SEQUENCE 2>>> StartPoint=(0,24)

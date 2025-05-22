@@ -31,6 +31,7 @@ GOT IT===FAIL_PXL x 1
 NO??? ===FEF0/1/2/3/4 FEM0/1/2/3/4 x 1
 GOT IT===PIX x 1
 GOT IT===SEL0_PXL x 6 (mostly in place)
+GOT IT===OPT_PXL
 
 
 COMPLETE:

@@ -1,0 +1,6 @@
+//Header
+!FontDef [BLACK]: TPF=0, ABR=2, ABE=0, CSN=6, CLX=6, CLY=504
+
+<<<SEQUENCE 0>>> StartPoint=(81,110) Drops=[6,7,8,9]
+isn't getting
+enough sleep.

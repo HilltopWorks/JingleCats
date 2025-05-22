@@ -1231,11 +1231,11 @@ def getWordList(textFilePath):
     return wordList
 
 def getLetterTable(tableFilePath):
-    tableFile = open(tableFilePath, 'r')
+    tableFile = open(tableFilePath, 'r', encoding="UTF8")
 
     letters=[]
 
-    for line in tableFile:
+    for line in tableFile.readlines():
         if line.startswith("//"):
             #Skip comments
             continue
@@ -1381,7 +1381,7 @@ def applyImageEdit(pixels, images, TPNs):
             PMode = flag & 0b111
             CLUTFlag = (flag & 0b1000) >> 3 
 
-            PXLOffset = 20
+            PXLOffset = 0x14
 
 
             if CLUTFlag == 1:
@@ -1391,7 +1391,7 @@ def applyImageEdit(pixels, images, TPNs):
 
         #Clear PXL header
         else:
-            PXLOffset = 20
+            PXLOffset = 0x14
             flag = readInt(imageFile)
             PMode = flag & 0b1
 
@@ -1561,6 +1561,7 @@ def modifyANM(ANMFilePath, ANMOffset, scriptFilePath, wordList, wordCoords, font
 
     with open(scriptFilePath) as scriptFile:
         for line in scriptFile:
+
             if line.startswith('//'):#Skip comments
                 continue
             elif line.startswith(FONT_DEF_STRING):#Font Definition line
@@ -1627,8 +1628,13 @@ def modifyANM(ANMFilePath, ANMOffset, scriptFilePath, wordList, wordCoords, font
                 
                 imageList.append(spriteImage)
             elif line.startswith(SEQUENCE_DEF_STRING):#Sequence header
-                currentSequence = int(line[line.index(' ') + 1:line.index('>>>')])#isolate number in sequence header
+                nextSequence = int(line[line.index(' ') + 1:line.index('>>>')])
                 currentStartCoords = line[line.index('(') + 1:line.index(')')]
+                currentStartPoint = [int(currentStartCoords.split(',')[0]), int(currentStartCoords.split(',')[1])]
+                if nextSequence == currentSequence:
+                    continue
+
+                currentSequence = int(line[line.index(' ') + 1:line.index('>>>')])#isolate number in sequence header
 
                 keeps = []
                 drops = []
@@ -1642,7 +1648,7 @@ def modifyANM(ANMFilePath, ANMOffset, scriptFilePath, wordList, wordCoords, font
                     dropSliceNumbers = dropStatement.split(",")
                     for numberString in dropSliceNumbers:
                         drops.append(int(numberString, base=10))
-                currentStartPoint = [int(currentStartCoords.split(',')[0]), int(currentStartCoords.split(',')[1])]
+                
                 seq = ANMObj.sequences[currentSequence]
 
 
@@ -1998,7 +2004,17 @@ def updateHarmfulParkOffsets(ANMFilePath, newOffsets, oldOffsets):
 
     return
 
-def testInjectText():
+def getPXLTPN(path, offset):
+    pxlFile = open(path, "rb")
+    pxlFile.seek(offset + 0xC)
+    dX = int.from_bytes(pxlFile.read(4), "little")
+    dY = int.from_bytes(pxlFile.read(4), "little")
+
+    tpn = (dX//0x40) + (dY//0x100)*16
+    pxlFile.close()
+    return tpn
+
+def injectGuideText():
     images = [["PS1_Base_Project/cd/working/ANM/GUID_PXL.PAC",0xC, 7],  ["PS1_Base_Project/cd/working/ANM/GUID_PXL.PAC",0x8020, 8]]
     #targetImagePaths = ["PS1_Base_Project/cd/working/ANM/GUID_PXL.PAC",
     #                    "PS1_Base_Project/cd/working/ANM/GUID_PXL.PAC",
@@ -2021,6 +2037,35 @@ def testInjectText():
     editPAC(ANMFilePath, 0, repackANM(newANMs[0]))
 
     return
+
+def injectBigText():
+    images_noTPN = [["PS1_Base_Project/cd/working/ANM/PIX.PAC", 0x20070]]
+    images = []
+    for image in images_noTPN:
+        imageTPN = getPXLTPN(image[0], image[1])
+        images.append([images_noTPN[0], images_noTPN[1], imageTPN])
+    #targetImagePaths = ["PS1_Base_Project/cd/working/ANM/GUID_PXL.PAC",
+    #                    "PS1_Base_Project/cd/working/ANM/GUID_PXL.PAC",
+    #                    "PS1_Base_Project/cd/working/ANM/GUID_PXL.PAC",
+    #                    "PS1_Base_Project/cd/working/ANM/GUID_PXL.PAC",
+    #                    "PS1_Base_Project/cd/working/ANM/GUID_PXL.PAC",
+    #                    "PS1_Base_Project/cd/working/ANM/GUID_PXL.PAC"]
+    #targetImageOffsets = [0xC, 0x8020, 0x8020, 0x8020, 0x8020, 0x8020]
+    insertionAreas = [[[0,32],[144,56]], [[0,56],[112, 80]], [[0,88],[144,136]]]
+    insertionAreaTPNs = [images[0][2],images[0][2],images[0][2]]
+    fontImagePath = "font/fontbig.png"
+    fontCLUT = [(0,0,0,0), (64,56,56,255), (), (), (0,0,0,255), (184,184,184,255)]
+    textFilePaths = ["ANM.txt"]
+    tableFilePath = "table.txt"
+    ANMFilePath = "PS1_Base_Project/cd/working/ANM/ANM.PAC"
+    offsets = [0xC]
+    newANMs = injectText(ANMFilePath, offsets, images, insertionAreaTPNs, insertionAreas, fontImagePath, fontCLUT, textFilePaths, tableFilePath)
+    
+
+    editPAC(ANMFilePath, 0, repackANM(newANMs[0]))
+
+    return
+
 
 def testeditHarmfulParkText():
     images = [["HAR/DTIM1/CU0102.TIM", 0x0, 27]]
@@ -2067,7 +2112,7 @@ def testInjectTextTIM():
 
     return
 
-#testInjectText()
+
 
 def getPXLs(filepath):
     pxls = []
@@ -2181,7 +2226,20 @@ def testANMReadingS():
     for anm in anms:
         animateANM(anm, pxls, cluts)
 
-testANMReadingS()
+
+def testANMReadingO():
+
+    pxls = getPXLs("PS1_Base_Project/cd/orig/SZGRP/OPT_PXL.PAC")
+
+    CLSFile = open("PS1_Base_Project/cd/orig/SZGRP/OPT.CLS", "rb")
+
+    anms = getANMs("PS1_Base_Project/cd/orig/SZGRP/OPT_ANS.PAC")
+
+    cluts = [CLT(CLSFile)]
+    for anm in anms:
+        animateANM(anm, pxls, cluts)
+
+#testANMReadingO()
 
 def testANMReading5():
 
@@ -2479,3 +2537,8 @@ def testUnpackingImages():
 def testImageInjection():    
     injectPNG("TEST/ST0_PXL.PAC/c_000_8bit.PNG", "c_000_8bit.PNG",  "PS1_Base_Project/cd/working/SZSTAGE/ST0_PXL.PAC", 0xC, "PS1_Base_Project/cd/working/SZSTAGE/ST0.CLS", 0, 0)
     injectPNG("TEST/OPT_PXL.PAC/18_000_4bit.PNG", "18_000TEST.PNG",  "PS1_Base_Project/cd/working/SZGRP/OPT_PXL.PAC", 0x18, "PS1_Base_Project/cd/working/SZGRP/OPT.CLS", 0, 0)
+
+
+
+
+injectGuideText()
