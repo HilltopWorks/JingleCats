@@ -456,9 +456,9 @@ def readCLTEntries(file, numEntries):
     for x in range(numEntries):
         entry = readShort(file)
 
-        red   = entry & 0b0000000000011111
+        red   =  entry & 0b0000000000011111
         green = (entry & 0b0000001111100000) >> 5
-        blue  = (entry & 0b0111110000000000) >>10
+        blue  = (entry & 0b0111110000000000) >> 10
         alpha = (entry & 0b1000000000000000) >> 15
 
         CLT_Entries += [[red, green, blue, alpha]]
@@ -1185,7 +1185,7 @@ class SpriteImage:
         self.Flag2Reserved = DEFAULT_FLAG2_RESERVE
 
 #returns a list of unique words in a text file
-def getWordList(textFilePath):
+def getWordList(textFilePath, perLetter=False):
     textFile = open(textFilePath, 'r')
 
     wordList = []
@@ -1216,7 +1216,11 @@ def getWordList(textFilePath):
                 cleanWord = word.strip(PUNCTUATION)
 
                 if cleanWord != '':
-                    wordList.append(cleanWord)
+                    if perLetter:
+                        for char in cleanWord:
+                            wordList.append(char)
+                    else:
+                        wordList.append(cleanWord)
 
                 #Add each punctuation used
                 remainingPunctuation = word.strip(cleanWord)
@@ -1268,6 +1272,8 @@ def getLetterCoords(fontImage, letterTable, fontColumns, fontHeight, fontCLUT):
         rightHandBorderFound = False
         for x in range(tileWidth):
             for y in range(fontHeight):
+                if characterTile.getpixel((x,y))[3] == 0:
+                    continue
                 if characterTile.getpixel((x,y)) != alphaColor:
                     leftHandBorder = x
                     leftHandBorderFound = True
@@ -1283,6 +1289,8 @@ def getLetterCoords(fontImage, letterTable, fontColumns, fontHeight, fontCLUT):
         #Check how many blank right-hand columns exist
         for x in reversed(range(tileWidth)):
             for y in range(fontHeight):
+                if characterTile.getpixel((x,y))[3] == 0:
+                    continue
                 if characterTile.getpixel((x,y)) != alphaColor:
                     rightHandBorder = x
                     rightHandBorderFound = True
@@ -1548,7 +1556,7 @@ def readSpritesFromText(line, wordList, wordCoords, fontList, imageList, current
     return sprites
 
 def modifyANM(ANMFilePath, ANMOffset, scriptFilePath, wordList, wordCoords, fontHeight, TPNs):
-    
+    ANMFilePath = ANMFilePath.replace("working", "orig")
     ANMObj = readANM(open(ANMFilePath, 'rb'), ANMOffset)
 
     fontList = []
@@ -1661,7 +1669,7 @@ def modifyANM(ANMFilePath, ANMOffset, scriptFilePath, wordList, wordCoords, font
                 elif len(drops) > 0:
                     for i in range(len(ANMObj.spriteGroups[seq.spriteGrpNumber].sprites)):
                         if i not in drops:
-                            retainedSprites.append(ANMObj.spriteGroups[seq.spriteGrpNumber].sprites[keepID])
+                            retainedSprites.append(ANMObj.spriteGroups[seq.spriteGrpNumber].sprites[i])
                     ANMObj.spriteGroups[seq.spriteGrpNumber].sprites = retainedSprites
                     ANMObj.spriteGroups[seq.spriteGrpNumber].NSprite = len(retainedSprites) 
                 else:
@@ -1737,7 +1745,7 @@ def editPAC(filePath, fileNumber, data):
     return outputBuffer
 
 #Adds the text in the text file to the corresponding insertion images for ANM, and returns the ANM object, and the widths remaining in the injection areas
-def injectText(ANMFilePath, ANMOffsets, images, TPNs, insertionAreas, fontImagePath, fontCLUT, textFilePaths, tableFilePath):
+def injectText(ANMFilePath, ANMOffsets, images, TPNs, insertionAreas, fontImagePath, fontCLUT, textFilePaths, tableFilePath, perLetter = False):
     #targetImages = []
     #Load target images
     #for imagePath in targetImagePaths:
@@ -1758,7 +1766,7 @@ def injectText(ANMFilePath, ANMOffsets, images, TPNs, insertionAreas, fontImageP
     wordList = []
     #Load word list
     for textFilePath in textFilePaths:
-        wordList += (getWordList(textFilePath))
+        wordList += (getWordList(textFilePath, perLetter))
     wordList = list(dict.fromkeys(wordList)) #remove dupes
 
     #letterWidths = getLetterCoords(fontImage, letterTable, numColumns, fontHeight, fontCLUT)
@@ -1792,6 +1800,8 @@ def injectText(ANMFilePath, ANMOffsets, images, TPNs, insertionAreas, fontImageP
             for y in range(letterBottomRight[1] - letterTopLeft[1]):
                 for x in range(letterBottomRight[0] - letterTopLeft[0] + 1):
                     fontPixel = fontImage.getpixel((letterTopLeft[0] + x, letterTopLeft[1] + y))
+                    if fontPixel[3] == 0:
+                        fontPixel = (0,0,0,0)
                     PXLvalue = fontCLUT.index(fontPixel)
                     assert PXLvalue >= 0, "Font pixel " + str(x) + "," + str(y) + " is undefined in CLUT!"
                     injectionPixels.append([wordX + x + positionInWordX, wordY + y, PXLvalue, insertionAreaNumber])
@@ -2007,12 +2017,48 @@ def updateHarmfulParkOffsets(ANMFilePath, newOffsets, oldOffsets):
 def getPXLTPN(path, offset):
     pxlFile = open(path, "rb")
     pxlFile.seek(offset + 0xC)
-    dX = int.from_bytes(pxlFile.read(4), "little")
-    dY = int.from_bytes(pxlFile.read(4), "little")
+    dX = int.from_bytes(pxlFile.read(2), "little")
+    dY = int.from_bytes(pxlFile.read(2), "little")
 
     tpn = (dX//0x40) + (dY//0x100)*16
     pxlFile.close()
     return tpn
+
+def getCLUTentries(clsPath, clutNumber, doprint = False):
+    clsFile = open(clsPath, "rb")
+    clsFile.seek(0x14 + clutNumber*0x20)
+    stringBuffer = "["
+
+    entries = readCLTEntries(clsFile, 0x10)
+
+    for entry in entries:
+        stringBuffer += "(" + str(entry[0] << 3) + ", " + str(entry[1] << 3) + ", " + str(entry[2] << 3) + ", " + str(entry[3] << 3) + "), "
+    stringBuffer += "]"
+
+    if doprint:
+        print(stringBuffer)
+
+    return stringBuffer
+
+def getAnmNumbers(anmPath, offsets):
+    anmPath = anmPath.replace("working", "orig")
+
+    numbers = []
+    allNumbers = []
+    anmFile = open(anmPath, "rb")
+
+    tableSize = int.from_bytes(anmFile.read(4), "little")
+    anmFile.seek(0)
+
+    for t in range(tableSize):
+        anmFile.seek(4 + t*4)
+        allNumbers.append(int.from_bytes(anmFile.read(4), "little"))
+
+    for offset in offsets:
+        numbers.append(allNumbers.index(offset))
+
+    return numbers
+
 
 def injectGuideText():
     images = [["PS1_Base_Project/cd/working/ANM/GUID_PXL.PAC",0xC, 7],  ["PS1_Base_Project/cd/working/ANM/GUID_PXL.PAC",0x8020, 8]]
@@ -2043,7 +2089,7 @@ def injectBigText():
     images = []
     for image in images_noTPN:
         imageTPN = getPXLTPN(image[0], image[1])
-        images.append([images_noTPN[0], images_noTPN[1], imageTPN])
+        images.append([image[0], image[1], imageTPN])
     #targetImagePaths = ["PS1_Base_Project/cd/working/ANM/GUID_PXL.PAC",
     #                    "PS1_Base_Project/cd/working/ANM/GUID_PXL.PAC",
     #                    "PS1_Base_Project/cd/working/ANM/GUID_PXL.PAC",
@@ -2054,15 +2100,16 @@ def injectBigText():
     insertionAreas = [[[0,32],[144,56]], [[0,56],[112, 80]], [[0,88],[144,136]]]
     insertionAreaTPNs = [images[0][2],images[0][2],images[0][2]]
     fontImagePath = "font/fontbig.png"
-    fontCLUT = [(0,0,0,0), (64,56,56,255), (), (), (0,0,0,255), (184,184,184,255)]
-    textFilePaths = ["ANM.txt"]
-    tableFilePath = "table.txt"
+    fontCLUT = [(0, 0, 0, 0), (232, 216, 136, 255), (8, 8, 8, 255), (240, 240, 240, 255)]
+    textFilePaths = ["ANM0.txt", "ANM1.txt", "ANM2.txt", "ANM3.txt", "ANM4.txt", "ANM5.txt"]
+    tableFilePath = "tableBig.txt"
     ANMFilePath = "PS1_Base_Project/cd/working/ANM/ANM.PAC"
-    offsets = [0xC]
-    newANMs = injectText(ANMFilePath, offsets, images, insertionAreaTPNs, insertionAreas, fontImagePath, fontCLUT, textFilePaths, tableFilePath)
+    offsets = [10724, 11004, 11184, 11364, 11580, 11776]
+    newANMs = injectText(ANMFilePath, offsets, images, insertionAreaTPNs, insertionAreas, fontImagePath, fontCLUT, textFilePaths, tableFilePath, perLetter=True)
     
-
-    editPAC(ANMFilePath, 0, repackANM(newANMs[0]))
+    anm_numbers = getAnmNumbers(ANMFilePath, offsets)
+    for anmID in range(len(newANMs)):
+        editPAC(ANMFilePath, anm_numbers[anmID], repackANM(newANMs[anmID]))
 
     return
 
@@ -2217,16 +2264,16 @@ def testANMReadingS():
     pxls = pxls + [getPXL("PS1_Base_Project/cd/orig/ANM/GUID_PXL1.PXL")]
     pxls = pxls + [getPXL("PS1_Base_Project/cd/orig/ANM/GUID_PXL2.PXL")]
     pxls = pxls + getPXLs("PS1_Base_Project/cd/orig/ANM/BOX_PXL.PAC")
-    pxls = pxls + getPXLs("PS1_Base_Project/cd/orig/ANM/PIX.PAC")
+    pxls = pxls + getPXLs("PS1_Base_Project/cd/working/ANM/PIX.PAC")
     CLSFile = open("P00.CLS", "rb")
     CLSFile2 = open("COMMON_ADJ.CLS", "rb")
-    anms = getANMs("PS1_Base_Project/cd/orig/ANM/ANM.PAC")
+    anms = getANMs("PS1_Base_Project/cd/working/ANM/ANM.PAC")
 
     cluts = [CLT(CLSFile), CLT(CLSFile2)]
     for anm in anms:
         animateANM(anm, pxls, cluts)
 
-
+#testANMReadingS()
 def testANMReadingO():
 
     pxls = getPXLs("PS1_Base_Project/cd/orig/SZGRP/OPT_PXL.PAC")
@@ -2540,5 +2587,6 @@ def testImageInjection():
 
 
 
-
-injectGuideText()
+#getCLUTentries(r"C:\Users\alibu\Desktop\tentatives\JingleCats\JingleCatsEnglishTranslation\mkpsxiso\JingleCats\ANM\P00.CLS", 107, doprint=True)
+#injectBigText()
+#injectGuideText()

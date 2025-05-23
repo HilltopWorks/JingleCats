@@ -1,6 +1,5 @@
 //Header
 !FontDef [BLACK]: TPF=0, ABR=2, ABE=0, CSN=6, CLX=6, CLY=504
 
-<<<SEQUENCE 0>>> StartPoint=(75,110) Drops=[5,6,7]
-doesn't trust you.
-Try to be friendlier.
+<<<SEQUENCE 0>>> StartPoint=(75,125) Drops=[5,6,7]
+doesn't  trust  you.

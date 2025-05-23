@@ -1,5 +1,5 @@
 //Header
 !FontDef [BLACK]: TPF=0, ABR=2, ABE=0, CSN=6, CLX=6, CLY=504
 
-<<<SEQUENCE 0>>> StartPoint=(64,110) Drops=[7,8]
-It's sunny today!
+<<<SEQUENCE 0>>> StartPoint=(64,125) Drops=[7,8]
+It's  sunny  today!

@@ -1,12 +1,11 @@
 //Header
 !FontDef [BLACK]: TPF=0, ABR=2, ABE=0, CSN=6, CLX=6, CLY=504
 
-<<<SEQUENCE 0>>> StartPoint=(77,101) Drops=[8,9,10,11,12]
-Oh no!
+<<<SEQUENCE 0>>> StartPoint=(88,101) Drops=[8,9,10,11,12]
+Oh  no!
 
 <<<SEQUENCE 0>>> StartPoint=(55,137)
 &
 
-<<<SEQUENCE 0>>> StartPoint=(111,130)
-are feeling
-distant!
+<<<SEQUENCE 0>>> StartPoint=(111,137)
+feel  distant!

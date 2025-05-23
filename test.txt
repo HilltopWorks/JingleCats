@@ -115,7 +115,7 @@ You can feed the [BLUE]cats[BLACK] a meal [RED]twice a day[BLACK],
 and give them a snack [RED]once a day[BLACK].
 
 <<<SEQUENCE 30>>> StartPoint=(0,24)
-Press [CIRCLE_BUTTON] on a food item to
+Press [CIRCLE_BUTTON] on a [BLUE]food[BLACK] item to
 drop it down for the [BLUE]cats[BLACK].
 
 <<<SEQUENCE 31>>> StartPoint=(0,24)
@@ -158,7 +158,7 @@ The [BLUE]cats[BLACK] will let you know they're hungry
 by [BLUE]pawing[BLACK] at the [RED]Fridge[BLACK].
 
 <<<SEQUENCE 41>>> StartPoint=(0,24)
-Access the [BLUE]food[BLACK] by pressing the [FOOD_ICON]
+Access the [BLUE]food[BLACK] by pressing [FOOD_ICON]
 in the [BLUE]Command Menu[BLACK].
 
 <<<SEQUENCE 42>>> StartPoint=(0,24)
@@ -205,7 +205,8 @@ The [BLUE]cats[BLACK] are [RED]hungry[BLACK]!
 Don't forget to [BLUE]feed[BLACK] them!
 
 <<<SEQUENCE 54>>> StartPoint=(0,24)
-Select [FOOD_ICON] in the Command Menu to feed them.
+Select [FOOD_ICON] in the Command Menu to
+feed them.
 
 <<<SEQUENCE 55>>> StartPoint=(0,24)
 The [BLUE]Love Meter[BLACK] hasn't been increasing.
