@@ -1,0 +1,68 @@
+//Header
+!FontDef [BLACK]: TPF=0, ABR=1, ABE=0, CSN=11, CLX=11, CLY=508
+
+<<<SEQUENCE 0>>> StartPoint=(20,40)
+No Memory Card
+Detected
+
+<<<SEQUENCE 1>>> StartPoint=(20,40)
+Memory Card Read
+Error
+
+<<<SEQUENCE 2>>> StartPoint=(20,50)
+Card Not Formatted
+
+<<<SEQUENCE 3>>> StartPoint=(20,50)
+Format Card?
+
+<<<SEQUENCE 4>>> StartPoint=(20,50)
+Formatting...
+
+<<<SEQUENCE 5>>> StartPoint=(20,50)
+Overwrite Save?
+
+<<<SEQUENCE 6>>> StartPoint=(20,50)
+Save Your Game?
+
+<<<SEQUENCE 7>>> StartPoint=(20,50)
+Saving...
+
+<<<SEQUENCE 8>>> StartPoint=(20,40)
+Load This Save
+Data?
+
+<<<SEQUENCE 9>>> StartPoint=(20,50)
+Loading...
+
+<<<SEQUENCE 10>>> StartPoint=(20,50)
+No Save Data
+
+<<<SEQUENCE 11>>> StartPoint=(20,40)
+No Free Blocks
+To Create Save
+
+<<<SEQUENCE 12>>> StartPoint=(20,40)
+Reading Memory
+Card...
+
+<<<SEQUENCE 13>>> StartPoint=(20,48)
+Save Complete
+
+<<<SEQUENCE 14>>> StartPoint=(20,48)
+Load Complete
+
+<<<SEQUENCE 15>>> StartPoint=(20,48)
+Format Complete
+
+<<<SEQUENCE 16>>> StartPoint=(20,40)
+The Save Data Is
+Corrupt
+
+<<<SEQUENCE 17>>> StartPoint=(20,48)
+Save Failure
+
+<<<SEQUENCE 18>>> StartPoint=(20,48)
+Load Failure
+
+<<<SEQUENCE 19>>> StartPoint=(20,48)
+Formatting Failure

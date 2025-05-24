@@ -1,9 +1,11 @@
 #from asyncio.windows_events import NULL
 #from logging import exception
 from PIL import Image,ImageDraw, ImageFont
+import filecmp
 import re
 import os
 import numpy as np
+import ImageHill
 import sys
 from pathlib import Path
 
@@ -1077,7 +1079,7 @@ def getPacOffsets(file):
 
 
 #Extracts every specified PXL and CLT pair into PNG files
-def unpackImages():
+def unpackImages(outdir):
     for image in IMAGES:
         PXLPath = image[0]
         CLTPath = image[1]
@@ -1085,28 +1087,28 @@ def unpackImages():
         offsets = getPacOffsets(PXLPath)
 
         for offset in offsets:
-            extractImage(os.path.join(SOURCE_FOLDER,PXLPath), offset, os.path.join(SOURCE_FOLDER,CLTPath), 0)
+            extractImage(os.path.join(SOURCE_FOLDER,PXLPath), offset, os.path.join(SOURCE_FOLDER,CLTPath), 0, outdir)
 
 
     return
 
 #generates a file name for a given image
-def generateImageFilePath(path,CLUT_Number, offset, PMODE):
+def generateImageFilePath(path, CLUT_Number, outdir, CLT_name,  offset, PMODE):
     if PMODE == FOUR_BIT_CLUT:
         PMODEString = '4bit'
     else:
         PMODEString = '8bit'
-    fileName = os.path.join(OUTPUT_FOLDER, Path(path).name, format(offset,'x') + "_" + str(CLUT_Number).zfill(3) + "_" + PMODEString + '.PNG')
-    if not os.path.exists(OUTPUT_FOLDER):
-        os.mkdir(OUTPUT_FOLDER)
-    if not os.path.exists(os.path.join(OUTPUT_FOLDER, Path(path).name)):
-        os.mkdir(os.path.join(OUTPUT_FOLDER, Path(path).name))
+    fileName = os.path.join(outdir, Path(path).name, format(offset,'x') + "_" + str(CLUT_Number).zfill(3) + "_" + CLT_name + "_" + PMODEString + '.PNG')
+    if not os.path.exists(outdir):
+        os.mkdir(outdir)
+    if not os.path.exists(os.path.join(outdir, Path(path).name)):
+        os.mkdir(os.path.join(outdir, Path(path).name))
     return fileName
 
 
 
 #Turns a PXL and corresponding palette file into their corresponding PNG images
-def extractImage(PXLFilePath, PXLFileOffest, CLTFilePath, CLTFileOffset):
+def extractImage(PXLFilePath, PXLFileOffest, CLTFilePath, CLTFileOffset, outdir):
     PXLFile = open(PXLFilePath, 'rb')
     PXLFile.read(PXLFileOffest)
     
@@ -1118,6 +1120,7 @@ def extractImage(PXLFilePath, PXLFileOffest, CLTFilePath, CLTFileOffset):
     PXL_W     = readShort(PXLFile)
     PXL_H     = readShort(PXLFile)
     
+    CLT_name = os.path.basename(CLTFilePath)
     CLTFile = open(CLTFilePath, 'rb')
     CLTFile.read(CLTFileOffset)
 
@@ -1143,7 +1146,7 @@ def extractImage(PXLFilePath, PXLFileOffest, CLTFilePath, CLTFileOffset):
 
     for CLUT_Number in range(CLUT_COUNT):
         image = generatePNG(PXLs, CLTs, PXL_W, PXL_H, CLUT_Number, PXL_PMODE)
-        image.save(generateImageFilePath(PXLFilePath, CLUT_Number, PXLFileOffest, PXL_PMODE))
+        image.save(generateImageFilePath(PXLFilePath, CLUT_Number, outdir, CLT_name, PXLFileOffest, PXL_PMODE))
     
 
 #testPXL = "PS1_Base_Project/cd/working/SZGRP/OPT_PXL.PAC"
@@ -1802,7 +1805,11 @@ def injectText(ANMFilePath, ANMOffsets, images, TPNs, insertionAreas, fontImageP
                     fontPixel = fontImage.getpixel((letterTopLeft[0] + x, letterTopLeft[1] + y))
                     if fontPixel[3] == 0:
                         fontPixel = (0,0,0,0)
-                    PXLvalue = fontCLUT.index(fontPixel)
+
+                    if fontPixel not in fontCLUT:
+                        PXLvalue = 0
+                    else:
+                        PXLvalue = fontCLUT.index(fontPixel)
                     assert PXLvalue >= 0, "Font pixel " + str(x) + "," + str(y) + " is undefined in CLUT!"
                     injectionPixels.append([wordX + x + positionInWordX, wordY + y, PXLvalue, insertionAreaNumber])
             positionInWordX += letterBottomRight[0] - letterTopLeft[0] + 1
@@ -2072,6 +2079,7 @@ def injectGuideText():
     insertionAreas = [[[0,0],[256,256]], [[16,0],[256, 80]], [[0,80],[160,112]], [[160,134], [256,256]], [[16,112], [160,128]], [[208, 80], [256, 112]]]
     insertionAreaTPNs = [7,8,8,8,8,8]
     fontImagePath = "font/fontmk3.png"
+    #                      Main Stroke                           Shadow
     fontCLUT = [(0,0,0,0), (64,56,56,255), (), (), (0,0,0,255), (184,184,184,255)]
     textFilePaths = ["test.txt"]
     tableFilePath = "table.txt"
@@ -2111,6 +2119,68 @@ def injectBigText():
     for anmID in range(len(newANMs)):
         editPAC(ANMFilePath, anm_numbers[anmID], repackANM(newANMs[anmID]))
 
+    return
+
+def injectOptionsText():
+    images_noTPN = [["PS1_Base_Project/cd/working/SZGRP/OPT_PXL.PAC", 0x18054]]
+    images = []
+    for image in images_noTPN:
+        imageTPN = getPXLTPN(image[0], image[1])
+        images.append([image[0], image[1], imageTPN])
+    #targetImagePaths = ["PS1_Base_Project/cd/working/ANM/GUID_PXL.PAC",
+    #                    "PS1_Base_Project/cd/working/ANM/GUID_PXL.PAC",
+    #                    "PS1_Base_Project/cd/working/ANM/GUID_PXL.PAC",
+    #                    "PS1_Base_Project/cd/working/ANM/GUID_PXL.PAC",
+    #                    "PS1_Base_Project/cd/working/ANM/GUID_PXL.PAC",
+    #                    "PS1_Base_Project/cd/working/ANM/GUID_PXL.PAC"]
+    #targetImageOffsets = [0xC, 0x8020, 0x8020, 0x8020, 0x8020, 0x8020]
+    insertionAreas = [[[0,72],[256,136]]]
+    insertionAreaTPNs = [images[0][2],images[0][2],images[0][2]]
+    fontImagePath = "font/fontmk3.png"
+    #fontCLUT = [(0, 0, 0, 0), (64,56,56,255), (184,184,184,255)]
+    fontCLUT = [(0, 0, 0, 0), (64,56,56,255), (0, 0, 0, 0)]
+
+    textFilePaths = ["OPT.txt"]
+    tableFilePath = "table.txt"
+    ANMFilePath = "PS1_Base_Project/cd/working/SZGRP/OPT_ANS.PAC"
+    offsets = [5736]
+    newANMs = injectText(ANMFilePath, offsets, images, insertionAreaTPNs, insertionAreas, fontImagePath, fontCLUT, textFilePaths, tableFilePath, perLetter=True)
+    
+    anm_numbers = getAnmNumbers(ANMFilePath, offsets)
+    for anmID in range(len(newANMs)):
+        editPAC(ANMFilePath, anm_numbers[anmID], repackANM(newANMs[anmID]))
+
+    ###################
+        
+    images_noTPN = [["PS1_Base_Project/cd/working/SZSYSTEM/SAV1_PXL.PAC", 0x8]]
+    images = []
+    for image in images_noTPN:
+        imageTPN = getPXLTPN(image[0], image[1])
+        images.append([image[0], image[1], imageTPN])
+    textFilePaths = ["OPT2.txt"]
+    insertionAreaTPNs = [images[0][2],images[0][2],images[0][2]]
+    ANMFilePath = "PS1_Base_Project/cd/working/SZSYSTEM/SAV_ANS.PAC"
+    offsets = [3516]
+    newANMs = injectText(ANMFilePath, offsets, images, insertionAreaTPNs, insertionAreas, fontImagePath, fontCLUT, textFilePaths, tableFilePath, perLetter=True)
+    anm_numbers = getAnmNumbers(ANMFilePath, offsets)
+    for anmID in range(len(newANMs)):
+        editPAC(ANMFilePath, anm_numbers[anmID], repackANM(newANMs[anmID]))
+
+    ######################
+
+    images_noTPN = [["PS1_Base_Project/cd/working/SZSYSTEM/LOD1_PXL.PAC", 0x8]]
+    images = []
+    for image in images_noTPN:
+        imageTPN = getPXLTPN(image[0], image[1])
+        images.append([image[0], image[1], imageTPN])
+    textFilePaths = ["OPT3.txt"]
+    insertionAreaTPNs = [images[0][2],images[0][2],images[0][2]]
+    ANMFilePath = "PS1_Base_Project/cd/working/SZSYSTEM/LOD_ANS.PAC"
+    offsets = [3516]
+    newANMs = injectText(ANMFilePath, offsets, images, insertionAreaTPNs, insertionAreas, fontImagePath, fontCLUT, textFilePaths, tableFilePath, perLetter=True)
+    anm_numbers = getAnmNumbers(ANMFilePath, offsets)
+    for anmID in range(len(newANMs)):
+        editPAC(ANMFilePath, anm_numbers[anmID], repackANM(newANMs[anmID]))
     return
 
 
@@ -2285,6 +2355,35 @@ def testANMReadingO():
     cluts = [CLT(CLSFile)]
     for anm in anms:
         animateANM(anm, pxls, cluts)
+
+def testANMReadingSave2():
+
+    pxls = getPXLs("PS1_Base_Project/cd/orig/SZSYSTEM/SAV1_PXL.PAC")
+    pxls += getPXLs("PS1_Base_Project/cd/orig/SZSYSTEM/SAV0_PXL.PAC")
+
+    CLSFile3 = open("PS1_Base_Project/cd/orig/SZGRP/OPT.CLS", "rb")
+    CLSFile = open("P00.CLS", "rb")
+    CLSFile2 = open("COMMON_ADJ.CLS", "rb")
+    anms = getANMs("PS1_Base_Project/cd/orig/SZSYSTEM/SAV_ANS.PAC")
+
+    cluts = [CLT(CLSFile), CLT(CLSFile2), CLT(CLSFile3)]
+    for anm in anms:
+        animateANM(anm, pxls, cluts)
+
+def testANMReadingLoad():
+
+    pxls = getPXLs("PS1_Base_Project/cd/orig/SZSYSTEM/LOD1_PXL.PAC")
+    pxls += getPXLs("PS1_Base_Project/cd/orig/SZSYSTEM/LOD0_PXL.PAC")
+
+    CLSFile3 = open("PS1_Base_Project/cd/orig/SZGRP/OPT.CLS", "rb")
+    CLSFile = open("P00.CLS", "rb")
+    CLSFile2 = open("COMMON_ADJ.CLS", "rb")
+    anms = getANMs("PS1_Base_Project/cd/orig/SZSYSTEM/LOD_ANS.PAC")
+
+    cluts = [CLT(CLSFile), CLT(CLSFile2), CLT(CLSFile3)]
+    for anm in anms:
+        animateANM(anm, pxls, cluts)
+
 
 #testANMReadingO()
 
@@ -2585,8 +2684,155 @@ def testImageInjection():
     injectPNG("TEST/ST0_PXL.PAC/c_000_8bit.PNG", "c_000_8bit.PNG",  "PS1_Base_Project/cd/working/SZSTAGE/ST0_PXL.PAC", 0xC, "PS1_Base_Project/cd/working/SZSTAGE/ST0.CLS", 0, 0)
     injectPNG("TEST/OPT_PXL.PAC/18_000_4bit.PNG", "18_000TEST.PNG",  "PS1_Base_Project/cd/working/SZGRP/OPT_PXL.PAC", 0x18, "PS1_Base_Project/cd/working/SZGRP/OPT.CLS", 0, 0)
 
+FOUR_BIT_EXCEPTIONS = [["PETUNIA", 81], ["TWIZZLER", 56],  ["TWIZZLER", 57],["TWIZZLER", 58],["TWIZZLER", 59],["TWIZZLER", 67],["TWIZZLER", 80], ["TWIZZLER", 81], ["TWIZZLER", 82], ["TWIZZLER", 83], ["TWIZZLER", 84]]
+
+def extractCatFrames(framepath, outdir):
+    frameFile = open(framepath, "rb")
+    catName = os.path.basename(framepath).replace(".FRM", "")
+    os.makedirs(os.path.join(outdir, catName), exist_ok=True)
+    n_entries = readInt(frameFile)
+
+    for n in range(n_entries):
+        frameFile.seek(4 + n*8)
+        frameFileOffset = readInt(frameFile)
+        frameFileSize = readInt(frameFile)
+
+        frameFile.seek(frameFileOffset)
+
+        n_animationFrames = readInt(frameFile)
+
+        clut = {}
+        clut["CLUT_FILE"] = framepath
+        clut["CLUT_MODE"] = ImageHill.RGBA_5551_PS1
+        clut["N_ENTRIES"] = 0x10
+
+        for r in range(n_animationFrames):
+            frameFile.seek(frameFileOffset + 4 + r*4)
+            animationFrameOffset = readInt(frameFile)
+            if r == 0:
+                #Clut entry
+                clut["CLUT_OFFSET"] =  animationFrameOffset + frameFileOffset
+
+                continue
+            pxl = {}
+
+            pxl["PXL_FILE"] = framepath
+
+            frameFile.seek( animationFrameOffset + frameFileOffset)
+            
+            isFourBitException = False
+
+            for exceptional in FOUR_BIT_EXCEPTIONS:
+                if exceptional[0] in catName and n == exceptional[1]:
+                    isFourBitException = True
+                    break
+            
+            if isFourBitException:
+                pxl["PXL_MODE"] = ImageHill.FOUR_BIT    
+            else:
+                pxl["PXL_MODE"] = ImageHill.TWO_BIT
+            w = readShort(frameFile)*4
+            h = readShort(frameFile)
+            
+            
+            pxl["PXL_OFFSET"] = animationFrameOffset + frameFileOffset + 4
+            pxl["WIDTH"] = w
+            pxl["HEIGHT"] = h
+            
 
 
-#getCLUTentries(r"C:\Users\alibu\Desktop\tentatives\JingleCats\JingleCatsEnglishTranslation\mkpsxiso\JingleCats\ANM\P00.CLS", 107, doprint=True)
+            fileName = catName.replace(".FRM", "")
+            ImageHill.convertImage(pxl, clut, os.path.join(outdir, fileName, str(n) + "_" + str(r) + ".PNG"))
+
+
+    return
+
+def injectStockImage(EDIT_PNG_PATH, BASE_PNG_PATH):
+    
+    if filecmp.cmp(EDIT_PNG_PATH, BASE_PNG_PATH):
+        return
+
+    print("Injecting STOCK", EDIT_PNG_PATH)
+    baseImage = Image.open(BASE_PNG_PATH)
+    editImage = Image.open(EDIT_PNG_PATH)
+
+    mask = ImageHill.getSkipMask(baseImage, editImage)
+    baseImage.close()
+    editImage.close()
+
+    png_name = os.path.basename(EDIT_PNG_PATH)
+
+    splitName = png_name.replace(".PNG", "").split("_")
+
+    offset = int(splitName[0], 16)
+    clutNumber = int(splitName[1], 10)
+    clutName = splitName[2]
+    bits = int(splitName[3][0], 10)
+
+    pxlPacName = os.path.normpath(EDIT_PNG_PATH).split(os.sep)[-2]
+    pxlDirName = os.path.normpath(EDIT_PNG_PATH).split(os.sep)[-3]
+    pxlFilePath = os.path.join(SOURCE_FOLDER, pxlDirName, pxlPacName)
+
+    pacSearchName = pxlDirName + "/" + pxlPacName
+
+    for searchField in IMAGES:
+        if searchField[0] == pacSearchName:
+            clutSearchName = searchField[1]
+            assert clutName in clutSearchName, "UHH, WHY DON'T THE CLUTS MATCH???"
+            break
+
+    clutPath = os.path.join(SOURCE_FOLDER, clutSearchName)
+    pxl = {}
+    pxl["PXL_FILE"] = os.path.normpath(pxlFilePath)
+    imageFile = Image.open(EDIT_PNG_PATH)
+    width = imageFile.width
+    height = imageFile.height
+
+
+    if bits == 8:
+        pxl["PXL_MODE"] = ImageHill.EIGHT_BIT
+        n_colors = 0x100
+    elif bits == 4:
+        pxl["PXL_MODE"] = ImageHill.FOUR_BIT
+        n_colors = 0x10
+
+    pxl["WIDTH"] = width
+    pxl["HEIGHT"] = height
+    pxl["PXL_OFFSET"] = offset + 0x14
+
+    clut = {}
+
+    clut["CLUT_FILE"] = clutPath
+    clut["CLUT_MODE"] = ImageHill.RGBA_5551_PS1
+    clut["N_COLORS"] = n_colors
+    clut["CLUT_OFFSET"] = 0x14 + clutNumber*(n_colors*2)
+
+    ImageHill.injectImage(pxl, clut, EDIT_PNG_PATH, skipmask=mask)
+
+    return
+
+def injectStocks(EDIT_PNG_FOLDER, BASE_PNG_FOLDER):
+    for overlay_folder_name in os.listdir(EDIT_PNG_FOLDER):
+        overlay_folder_path = os.path.join(EDIT_PNG_FOLDER, overlay_folder_name)
+        for pacName in os.listdir(overlay_folder_path):
+            pacFolderPath = os.path.join(overlay_folder_path, pacName)
+            if not pacName.upper().endswith(".PAC"):
+                continue
+            
+            for pngFileName in os.listdir(pacFolderPath):
+                if not pngFileName.upper().endswith(".PNG"):
+                    continue
+                editPngPath = os.path.join(pacFolderPath, pngFileName)
+                basePNGPath = editPngPath.replace(EDIT_PNG_FOLDER, BASE_PNG_FOLDER)
+                injectStockImage(editPngPath, basePNGPath)
+            
+    return
+
+
+#extractCatFrames(r"mkpsxiso\JingleCats\CAT\TWIZZLER.FRM", "CATS")
+#testANMReadingLoad()
+#getCLUTentries(r"C:\Users\alibu\Desktop\tentatives\JingleCats\JingleCatsEnglishTranslation\mkpsxiso\JingleCats\SZGRP\OPT.CLS", 3, doprint=True)
 #injectBigText()
 #injectGuideText()
+#testANMReadingSave2()
+#unpackImages("STOCK_IMAGES_ORIGINAL")
