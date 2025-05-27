@@ -1,0 +1,11 @@
+//Header
+!FontDef [BLACK]: TPF=0, ABR=2, ABE=0, CSN=6, CLX=6, CLY=504
+
+<<<SEQUENCE 0>>> StartPoint=(77,101) Drops=[8,9,10,11,12]
+Oh no!
+
+<<<SEQUENCE 0>>> StartPoint=(55,137)
+&
+
+<<<SEQUENCE 0>>> StartPoint=(111,130)
+aren't getting along!

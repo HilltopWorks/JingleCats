@@ -1,0 +1,201 @@
+//Header
+!FontDef [BLACK]: TPF=0, ABR=2, ABE=1, CSN=2, CLX=2, CLY=495
+
+<<<SEQUENCE 0>>> StartPoint=(134,6) Keeps=[0]
+Max is such a cool
+cat. I wish I could
+be a little more
+like him.
+
+<<<SEQUENCE 1>>> StartPoint=(134,6) Keeps=[0]
+Max treats us all
+very kindly. He's
+like everyone's
+big brother.
+
+<<<SEQUENCE 2>>> StartPoint=(134,6) Keeps=[0]
+He's gentle and
+kind with everyone.
+I wish he'd save
+it just for me!
+
+<<<SEQUENCE 3>>> StartPoint=(134,6) Keeps=[0]
+Eh, whatever.
+Time for some fun,
+boyos!
+
+<<<SEQUENCE 4>>> StartPoint=(134,6) Keeps=[0]
+Cheese Puff is a
+tall drink of water!
+I want to see his
+passionate side.
+
+<<<SEQUENCE 5>>> StartPoint=(134,6) Keeps=[0]
+I don't think I'm
+smart enough to
+keep up with his
+conversations...
+
+<<<SEQUENCE 6>>> StartPoint=(134,6) Keeps=[0]
+How is he so
+laid-back? I
+can't make heads
+or tails of him.
+
+<<<SEQUENCE 7>>> StartPoint=(134,6) Keeps=[0]
+Playing with
+Twizzler is so
+much fun! He
+can do anything!
+
+<<<SEQUENCE 8>>> StartPoint=(134,6) Keeps=[0]
+I prefer cats with
+some intelligence.
+I'm not sure
+he's the one...
+
+<<<SEQUENCE 9>>> StartPoint=(134,6) Keeps=[0]
+Twizzler is so
+immature! His puns
+make me gag!
+
+<<<SEQUENCE 10>>> StartPoint=(134,6) Keeps=[0]
+Why's he always
+flipping out!?
+But I sense he's a
+nice guy at heart.
+
+<<<SEQUENCE 11>>> StartPoint=(134,6) Keeps=[0]
+He's cool, but I
+can sense some
+ulterior motive.
+Danger, danger!
+
+<<<SEQUENCE 12>>> StartPoint=(134,6) Keeps=[0]
+Everyone badmouths
+him, but I bet he's
+actually a softie.
+
+<<<SEQUENCE 13>>> StartPoint=(134,6) Keeps=[0]
+Sprocket has a
+dangerous air about
+him. Us ladies need
+to take care.
+
+<<<SEQUENCE 14>>> StartPoint=(134,6) Keeps=[0]
+Binky needs to get
+his act togther!
+Put in some effort
+once in a while!
+
+<<<SEQUENCE 15>>> StartPoint=(134,6) Keeps=[0]
+Binky is cute and
+bouncy! I think of
+him as my lil' bro.
+
+<<<SEQUENCE 16>>> StartPoint=(134,6) Keeps=[0]
+How can you be so
+oblivious! Umm, I'm
+right here!
+Hello??? Hmph!
+
+<<<SEQUENCE 17>>> StartPoint=(134,6) Keeps=[0]
+You're older than
+I am, so act like
+it!
+
+<<<SEQUENCE 18>>> StartPoint=(134,6) Keeps=[0]
+Her attitude is a
+complete mystery.
+Is she...into me?
+I can't tell.
+
+<<<SEQUENCE 19>>> StartPoint=(134,6) Keeps=[0]
+Graymer has been
+following me around
+lately. I wonder
+why?
+
+<<<SEQUENCE 20>>> StartPoint=(134,6) Keeps=[0]
+Graymer has
+smarts while still 
+being sexy. I'm
+jealous of her.
+
+<<<SEQUENCE 21>>> StartPoint=(134,6) Keeps=[0]
+Whenever I see
+her, I get the
+urge to keep her
+safe...
+
+<<<SEQUENCE 22>>> StartPoint=(134,6) Keeps=[0]
+Cueball is an
+upstanding lady.
+I can let my guard
+down around her.
+
+<<<SEQUENCE 23>>> StartPoint=(134,6) Keeps=[0]
+A girl born with a
+silver spoon is so
+much fun to tease.
+Tee hee hee...
+
+<<<SEQUENCE 24>>> StartPoint=(134,6) Keeps=[0]
+Why is she always
+so pushy with me?
+I wish we could
+just get along.
+
+<<<SEQUENCE 25>>> StartPoint=(134,6) Keeps=[0]
+Clara is every-
+one's beloved idol.
+She's even got
+me intrigued...
+
+<<<SEQUENCE 26>>> StartPoint=(134,6) Keeps=[0]
+All Clara does is
+nag, nag, nag! Her
+ladylike appear-
+ance is all an act!
+
+<<<SEQUENCE 27>>> StartPoint=(134,6) Keeps=[0]
+Sweet lil' Petunia
+is as cute as a
+button. And I think
+she likes me!
+
+<<<SEQUENCE 28>>> StartPoint=(134,6) Keeps=[0]
+She acts like a
+big deal even
+though she's
+smaller than me!
+
+<<<SEQUENCE 29>>> StartPoint=(134,6) Keeps=[0]
+She talks a big
+game, but at heart
+she's still a little
+girl.
+
+<<<SEQUENCE 30>>> StartPoint=(134,6) Keeps=[0]
+Max, you've lived
+a cushy life. You
+know nothing about
+the outside world.
+
+<<<SEQUENCE 31>>> StartPoint=(134,6) Keeps=[0]
+Don't be fooled by
+that sweet voice of
+hers. She'll ruin
+you!
+
+<<<SEQUENCE 32>>> StartPoint=(134,6) Keeps=[0]
+We may come from
+different worlds,
+but I can make you
+a better woman.
+
+<<<SEQUENCE 33>>> StartPoint=(134,6) Keeps=[0]
+I don't want to
+settle down, but
+if Clara was with
+me, then...

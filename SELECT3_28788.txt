@@ -1,0 +1,57 @@
+//Header
+!FontDef [BLACK]: TPF=0, ABR=2, ABE=1, CSN=2, CLX=2, CLY=491
+!FontDef [GREEN]: TPF=0, ABR=2, ABE=1, CSN=4, CLX=4, CLY=492
+
+<<<SEQUENCE 0>>> StartPoint=(76,52) Keeps=[0,1,2,3]
+The leader of the
+Jingle Cats. Well liked,
+but often ends up
+being the "nice guy".
+
+<<<SEQUENCE 1>>> StartPoint=(76,52) Keeps=[0,1,2,3]
+Beneath his cool
+professor attitude,
+there's passion. Not
+great with women.
+
+<<<SEQUENCE 2>>> StartPoint=(71,52) Keeps=[0,1,2,3]
+Playful and carefree.
+Unbound by rules, he
+goes his own way in
+life. Eccentric.
+
+<<<SEQUENCE 3>>> StartPoint=(76,52) Keeps=[0,1,2,3]
+A lady-killer who grew up
+on the downtown streets.
+He acts tough, but has
+a softer side deep down.
+
+<<<SEQUENCE 4>>> StartPoint=(73,52) Keeps=[0,1,2,3]
+Soft and gentle, but
+prone to clumsy acci-
+dents. Tickles your
+motherly instincts.
+
+<<<SEQUENCE 5>>> StartPoint=(76,52) Keeps=[0,1,2,3]
+[GREEN]A naughty cat that
+[GREEN]uses her sexy wiles
+[GREEN]to control men.
+[GREEN]Came from a bar.
+
+<<<SEQUENCE 6>>> StartPoint=(76,52) Keeps=[0,1,2,3]
+[GREEN]Once a princess
+[GREEN]who lived in a giant
+[GREEN]mansion. Her naivete
+[GREEN]gets her in trouble.
+
+<<<SEQUENCE 7>>> StartPoint=(76,52) Keeps=[0,1,2,3]
+[GREEN]A beautiful and tidy
+[GREEN]lady. Her personality
+[GREEN]makes her popular
+[GREEN]with men and women.
+
+<<<SEQUENCE 8>>> StartPoint=(76,52) Keeps=[0,1,2,3]
+[GREEN]The littlest of the
+[GREEN]Jingle Cats. A preco-
+[GREEN]cious one that hates
+[GREEN]being talked down to.

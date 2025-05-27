@@ -1,0 +1,92 @@
+//Header
+!FontDef [BLACK]: TPF=0, ABR=0, ABE=0, CSN=0, CLX=0, CLY=492
+
+<<<SEQUENCE 0>>> StartPoint=(0,2)
+Not a care in the world
+
+<<<SEQUENCE 1>>> StartPoint=(0,2)
+I gotta protect her
+
+<<<SEQUENCE 2>>> StartPoint=(0,2)
+I can't understand her...
+
+<<<SEQUENCE 3>>> StartPoint=(0,2)
+A total enigma
+
+<<<SEQUENCE 4>>> StartPoint=(0,2)
+Femme fatales spell danger...
+
+<<<SEQUENCE 5>>> StartPoint=(0,2)
+She makes me feel safe
+
+<<<SEQUENCE 6>>> StartPoint=(0,2)
+This guy HATES me
+
+<<<SEQUENCE 7>>> StartPoint=(0,2)
+He's my lil' bro
+
+<<<SEQUENCE 8>>> StartPoint=(0,2)
+She's outta my league
+
+<<<SEQUENCE 9>>> StartPoint=(0,2)
+A real cutie pie
+
+<<<SEQUENCE 10>>> StartPoint=(0,2)
+An annoying square
+
+<<<SEQUENCE 11>>> StartPoint=(0,2)
+Can't let my guard down!
+
+<<<SEQUENCE 12>>> StartPoint=(0,2)
+We live in different worlds...
+
+<<<SEQUENCE 13>>> StartPoint=(0,2)
+My favorite cat!
+
+<<<SEQUENCE 14>>> StartPoint=(0,2)
+He's really reliable
+
+<<<SEQUENCE 15>>> StartPoint=(0,2)
+Let's play again today!
+
+<<<SEQUENCE 16>>> StartPoint=(0,2)
+Others say she's pretty...
+
+<<<SEQUENCE 17>>> StartPoint=(0,2)
+All she does is make fun of me!
+
+<<<SEQUENCE 18>>> StartPoint=(0,2)
+Mmm, I suppose he's cute
+
+<<<SEQUENCE 19>>> StartPoint=(0,2)
+He needs to grow up...
+
+<<<SEQUENCE 20>>> StartPoint=(0,2)
+She won't fool me again
+
+<<<SEQUENCE 21>>> StartPoint=(0,2)
+He's such a nice guy!
+
+<<<SEQUENCE 22>>> StartPoint=(0,2)
+A total genius
+
+<<<SEQUENCE 23>>> StartPoint=(0,2)
+I wish I could be like her...
+
+<<<SEQUENCE 24>>> StartPoint=(0,2)
+I wish he'd see me as a woman...
+
+<<<SEQUENCE 25>>> StartPoint=(0,2)
+We do NOT get along
+
+<<<SEQUENCE 26>>> StartPoint=(0,2)
+She acts like a total brat
+
+<<<SEQUENCE 27>>> StartPoint=(0,2)
+Hey, act more mature!
+
+<<<SEQUENCE 28>>> StartPoint=(0,2)
+Not dependable enough for me!
+
+<<<SEQUENCE 29>>> StartPoint=(0,2)
+What a loudmouth!

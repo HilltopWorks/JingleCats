@@ -1,0 +1,44 @@
+//Header
+!FontDef [BLACK]: TPF=0, ABR=3, ABE=0, CSN=10, CLX=10, CLY=498
+
+<<<SEQUENCE 0>>> StartPoint=(0,0)
+They didn't confess their feelings.
+
+<<<SEQUENCE 1>>> StartPoint=(0,0)
+'s trust in you was too low.
+
+<<<SEQUENCE 2>>> StartPoint=(0,0)
+Try petting and keeping them full.
+
+<<<SEQUENCE 3>>> StartPoint=(0,0)
+'s Love wasn't high enough.
+
+<<<SEQUENCE 4>>> StartPoint=(0,0)
+Try again when the meter is full!
+
+<<<SEQUENCE 5>>> StartPoint=(0,0)
+'s Trust level was too low.
+
+<<<SEQUENCE 6>>> StartPoint=(0,0)
+'s Cleanliness was too low.
+
+<<<SEQUENCE 7>>> StartPoint=(0,0)
+was too hungry.
+
+<<<SEQUENCE 8>>> StartPoint=(0,0)
+'s Mood was too low.
+
+<<<SEQUENCE 9>>> StartPoint=(0,0)
+Try petting and keeping them full.
+
+<<<SEQUENCE 10>>> StartPoint=(0,0)
+Bathe the cats and keep the house clean.
+
+<<<SEQUENCE 11>>> StartPoint=(0,0)
+The cats look hungry.
+
+<<<SEQUENCE 12>>> StartPoint=(0,0)
+Make sure to feed the cats.
+
+<<<SEQUENCE 13>>> StartPoint=(0,0)
+Keep an eye on their Mood.

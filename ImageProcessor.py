@@ -48,6 +48,7 @@ NEWLINE_DISTANCE = 16 #Y distance moved after a newline
 
 #Per-game variables
 SOURCE_FOLDER = "PS1_Base_Project/cd/working/"
+BASE_FOLDER = "PS1_Base_Project/cd/orig/"
 GAME_NAME = "Harmful Park" #Checked for game specific sprite params
 
 HAR_ORIGINAL_FOLDER = 'HAR Original'
@@ -57,7 +58,31 @@ HAR_ANI_TABLE_OFFSETS = []
 
 
            #PXL File              #CLT file
-IMAGES = [["SZSTAGE/ST0_PXL.PAC", "SZSTAGE/ST0.CLS"],
+IMAGES = [["SZINGAME/STAT_PXL.PAC", "ANM/P00.CLS"],
+          
+          ["SZINGAME/FEF0_PXL.PAC", "BG/00.CLS"],
+          ["SZINGAME/FEF1_PXL.PAC", "BG/00.CLS"],
+          ["SZINGAME/FEF2_PXL.PAC","BG/00.CLS"],
+          ["SZINGAME/FEF3_PXL.PAC","BG/00.CLS"],
+          ["SZINGAME/FEF4_PXL.PAC", "BG/00.CLS"],
+          ["SZINGAME/FEM0_PXL.PAC",  "BG/00.CLS"],
+          ["SZINGAME/FEM1_PXL.PAC",  "BG/00.CLS"],
+          ["SZINGAME/FEM2_PXL.PAC", "BG/00.CLS"],
+          ["SZINGAME/FEM3_PXL.PAC", "BG/00.CLS"],
+          ["SZINGAME/FEM4_PXL.PAC",  "BG/00.CLS"],
+          
+          
+          
+          
+          ["SZSYSTEM/SYS0_PXL.PAC", "ANM/P00.CLS"],
+          ["SZSYSTEM/LOD0_PXL.PAC", "ANM/P00.CLS"],
+          ["SZSYSTEM/SAV0_PXL.PAC", "ANM/P00.CLS"],
+
+          
+          ["SZSYSTEM/SYS1_PXL.PAC", "ANM/P00.CLS"],
+          
+          
+          ["SZSTAGE/ST0_PXL.PAC", "SZSTAGE/ST0.CLS"],
           ["SZSTAGE/ST1_PXL.PAC", "SZSTAGE/ST1.CLS"],
           ["SZSTAGE/ST2_PXL.PAC", "SZSTAGE/ST2.CLS"],
           ["SZSTAGE/ST3_PXL.PAC", "SZSTAGE/ST3.CLS"],
@@ -85,26 +110,16 @@ IMAGES = [["SZSTAGE/ST0_PXL.PAC", "SZSTAGE/ST0.CLS"],
 
           ["SZINGAME/WAI0_PXL.PAC", "SZINGAME/WAIT.CLS"],
           ["SZINGAME/WAI1_PXL.PAC", "SZINGAME/WAIT.CLS"],
-          ["SZINGAME/FEF0_PXL.PAC", "SZGRP/COMMON.CLS"],
-          ["SZINGAME/FEF1_PXL.PAC", "SZINGAME/WAIT.CLS"],
-          ["SZINGAME/FEF2_PXL.PAC", "SZINGAME/WAIT.CLS"],
-          ["SZINGAME/FEF3_PXL.PAC", "SZGRP/COMMON.CLS"],
-          ["SZINGAME/FEF4_PXL.PAC", "SZINGAME/WAIT.CLS"],
-          ["SZINGAME/FEM0_PXL.PAC", "SZGRP/COMMON.CLS"],
-          ["SZINGAME/FEM1_PXL.PAC", "SZINGAME/WAIT.CLS"],
-          ["SZINGAME/FEM2_PXL.PAC", "SZINGAME/WAIT.CLS"],
-          ["SZINGAME/FEM3_PXL.PAC", "SZGRP/COMMON.CLS"],
-          ["SZINGAME/FEM4_PXL.PAC", "SZINGAME/WAIT.CLS"],
-          ["SZINGAME/STAT_PXL.PAC", "SZINGAME/WAIT.CLS"],
 
-          ["SZSYSTEM/LOD0_PXL.PAC", "SZGRP/COMMON.CLS"],
+          
+
+          
           ["SZSYSTEM/LOD1_PXL.PAC", "SZGRP/COMMON.CLS"],
           ["SZSYSTEM/REC0_PXL.PAC", "SZGRP/COMMON.CLS"],
           ["SZSYSTEM/REC1_PXL.PAC", "SZGRP/COMMON.CLS"],
-          ["SZSYSTEM/SAV0_PXL.PAC", "SZGRP/COMMON.CLS"],
           ["SZSYSTEM/SAV1_PXL.PAC", "SZGRP/COMMON.CLS"],
-          ["SZSYSTEM/SYS0_PXL.PAC", "SZGRP/COMMON.CLS"],
-          ["SZSYSTEM/SYS1_PXL.PAC", "SZGRP/COMMON.CLS"],
+          
+          
 
             ]
 
@@ -1087,7 +1102,8 @@ def unpackImages(outdir):
         offsets = getPacOffsets(PXLPath)
 
         for offset in offsets:
-            extractImage(os.path.join(SOURCE_FOLDER,PXLPath), offset, os.path.join(SOURCE_FOLDER,CLTPath), 0, outdir)
+            print("Extracting", PXLPath, hex(offset))
+            extractImage(os.path.join(BASE_FOLDER,PXLPath), offset, os.path.join(BASE_FOLDER,CLTPath), 0, outdir)
 
 
     return
@@ -1098,11 +1114,12 @@ def generateImageFilePath(path, CLUT_Number, outdir, CLT_name,  offset, PMODE):
         PMODEString = '4bit'
     else:
         PMODEString = '8bit'
-    fileName = os.path.join(outdir, Path(path).name, format(offset,'x') + "_" + str(CLUT_Number).zfill(3) + "_" + CLT_name + "_" + PMODEString + '.PNG')
+    folderName = os.path.normpath(path).split(os.sep)[-2]
+    fileName = os.path.join(outdir, folderName, Path(path).name, format(offset,'x') + "_" + str(CLUT_Number).zfill(3) + "_" + CLT_name + "_" + PMODEString + '.PNG')
     if not os.path.exists(outdir):
         os.mkdir(outdir)
-    if not os.path.exists(os.path.join(outdir, Path(path).name)):
-        os.mkdir(os.path.join(outdir, Path(path).name))
+    if not os.path.exists(os.path.join(outdir, folderName, Path(path).name)):
+        os.mkdir(os.path.join(outdir, folderName, Path(path).name))
     return fileName
 
 
@@ -1253,7 +1270,7 @@ def getLetterTable(tableFilePath):
     return letters
 
 #Returns the left and right borders of each letter in the font
-def getLetterCoords(fontImage, letterTable, fontColumns, fontHeight, fontCLUT):
+def getLetterCoords(fontImage, letterTable, fontColumns, fontHeight, fontCLUT, kerning = 0):
     
     letterCoords = []
 
@@ -1301,12 +1318,12 @@ def getLetterCoords(fontImage, letterTable, fontColumns, fontHeight, fontCLUT):
             if rightHandBorderFound == True:
                 break
 
-        letterCoords.append([leftHandBorder,rightHandBorder])
+        letterCoords.append([leftHandBorder,rightHandBorder + kerning])
 
     return letterCoords
 
 #Finds locations to put words in the specified free areas and returns the coordinates, and the remaining areas
-def arrangeTextIntoImage(wordList, insertionAreas, fontImage, fontColumns, fontHeight, tableFilePath, fontCLUT):
+def arrangeTextIntoImage(wordList, insertionAreas, fontImage, fontColumns, fontHeight, tableFilePath, fontCLUT, kerning = 0):
     
     wordCoordinates = []
 
@@ -1327,7 +1344,7 @@ def arrangeTextIntoImage(wordList, insertionAreas, fontImage, fontColumns, fontH
         widthsRemaining.append(widthsRemainingCurrentArea)
 
     letterTable = getLetterTable(tableFilePath)
-    letterWidths = getLetterCoords(fontImage, letterTable, fontColumns, fontHeight, fontCLUT)
+    letterWidths = getLetterCoords(fontImage, letterTable, fontColumns, fontHeight, fontCLUT, kerning)
     
 
     #Find next available position for word and add to return list
@@ -1748,7 +1765,7 @@ def editPAC(filePath, fileNumber, data):
     return outputBuffer
 
 #Adds the text in the text file to the corresponding insertion images for ANM, and returns the ANM object, and the widths remaining in the injection areas
-def injectText(ANMFilePath, ANMOffsets, images, TPNs, insertionAreas, fontImagePath, fontCLUT, textFilePaths, tableFilePath, perLetter = False):
+def injectText(ANMFilePath, ANMOffsets, images, TPNs, insertionAreas, fontImagePath, fontCLUT, textFilePaths, tableFilePath, perLetter = False, kerning = 0):
     #targetImages = []
     #Load target images
     #for imagePath in targetImagePaths:
@@ -1776,7 +1793,7 @@ def injectText(ANMFilePath, ANMOffsets, images, TPNs, insertionAreas, fontImageP
     letterTable = getLetterTable(tableFilePath)
 
     #Insertion area number, X, Y, letter bounds list for word
-    wordCoords = arrangeTextIntoImage(wordList, insertionAreas, fontImage, numColumns, fontHeight, tableFilePath, fontCLUT)
+    wordCoords = arrangeTextIntoImage(wordList, insertionAreas, fontImage, numColumns, fontHeight, tableFilePath, fontCLUT, kerning)
     injectionPixels = []
     #Iterate over word objects, copying each letter to target area
     for coordNumber in range(len(wordCoords)):
@@ -2183,29 +2200,82 @@ def injectOptionsText():
         editPAC(ANMFilePath, anm_numbers[anmID], repackANM(newANMs[anmID]))
     return
 
+def injectFailText():
+    images_noTPN = [["PS1_Base_Project/cd/working/ANM/FAIL_PXL.PAC",0x8]]
+    images = []
+    for image in images_noTPN:
+        imageTPN = getPXLTPN(image[0], image[1])
+        images.append([image[0], image[1], imageTPN])
 
-def testeditHarmfulParkText():
-    images = [["HAR/DTIM1/CU0102.TIM", 0x0, 27]]
-    insertionAreas = [[[0,0],[256,36]], [[0,32],[196, 52]], [[0,52],[136,68]]]
-    insertionAreaTPNs = [27,27,27]
+    insertionAreas = [[[0,96],[256,224]], [[40,24],[256, 96]]]
+    insertionAreaTPNs = [images[0][2],images[0][2]]
     fontImagePath = "font/fontmk3.png"
-    fontCLUT = [(0,0,0,0), (), (), (), (),(),(),(),(),(),(),(64,56,56,255), (184,184,184,255)]
-    textFilePaths = ["script/ANIMESA_1012.txt", "script/ANIMESA_1140.txt","script/ANIMESA_3832.txt","script/ANIMESA_3920.txt"]
+    #                      Main Stroke                           Shadow
+    fontCLUT = [(0,0,0,0), (64,56,56,255), (), (), (0,0,0,255), (184,184,184,255)]
+    textFilePaths = ["FAIL.txt"]
     tableFilePath = "table.txt"
-    ANMFilePath = "HAR/DTIM1/ANIMEA.ANI"
-    oldANMFilePath = "HAR Original/DTIM1/ANIMEA.ANI"
-    oldOffsets = [1012, 1140, 3832, 3920]
+    ANMFilePath = "PS1_Base_Project/cd/working/ANM/FAIL_ANS.PAC"
+    offsets = [32]
+    newANMs = injectText(ANMFilePath, offsets, images, insertionAreaTPNs, insertionAreas, fontImagePath, fontCLUT, textFilePaths, tableFilePath)
     
-    ANMs = injectText(oldANMFilePath, oldOffsets, images, insertionAreaTPNs, insertionAreas, fontImagePath, fontCLUT, textFilePaths, tableFilePath)
 
-    newOffsets, oldOffsetsAll = updateANI(ANMs, oldOffsets, ANMFilePath)
-
-    updateHarmfulParkOffsets(ANMFilePath, newOffsets, oldOffsetsAll)
-
+    editPAC(ANMFilePath, 0, repackANM(newANMs[0]))
 
     return
 
-#testeditHarmfulParkText()
+
+def injectFailText():
+    images_noTPN = [["PS1_Base_Project/cd/working/ANM/FAIL_PXL.PAC",0x8]]
+    images = []
+    for image in images_noTPN:
+        imageTPN = getPXLTPN(image[0], image[1])
+        images.append([image[0], image[1], imageTPN])
+
+    insertionAreas = [[[0,96],[256,224]], [[40,24],[256, 96]]]
+    insertionAreaTPNs = [images[0][2],images[0][2]]
+    fontImagePath = "font/fontmk3.png"
+    #                      Main Stroke                           Shadow
+    fontCLUT = [(0,0,0,0), (64,56,56,255), (), (), (0,0,0,255), (184,184,184,255)]
+    textFilePaths = ["FAIL.txt"]
+    tableFilePath = "table.txt"
+    ANMFilePath = "PS1_Base_Project/cd/working/ANM/FAIL_ANS.PAC"
+    offsets = [32]
+    newANMs = injectText(ANMFilePath, offsets, images, insertionAreaTPNs, insertionAreas, fontImagePath, fontCLUT, textFilePaths, tableFilePath)
+    
+
+    editPAC(ANMFilePath, 0, repackANM(newANMs[0]))
+
+    return
+
+def injectSelectText():
+    images_noTPN = [["PS1_Base_Project/cd/working/SZGRP/SEL0_PXL.PAC",0x18058], ["PS1_Base_Project/cd/working/SZGRP/SEL0_PXL.PAC",0x28080], ["PS1_Base_Project/cd/working/SZGRP/SEL0_PXL.PAC",0x1C], ["PS1_Base_Project/cd/working/SZGRP/SEL0_PXL.PAC",0x2006c]]
+    images = []
+    for image in images_noTPN:
+        imageTPN = getPXLTPN(image[0], image[1])
+        images.append([image[0], image[1], imageTPN])
+
+    insertionAreas = [[[0,0],[256,256]], [[0,88],[256, 164]], [[0,0],[256,256]],[[0,0],[256,256]]]
+    insertionAreaTPNs = [images[0][2], images[1][2], images[2][2], images[3][2]]
+    fontImagePath = "font/fontmk3_NOSHADOW.png"
+    #                      Main Stroke                           Shadow
+    fontCLUT = [(0,0,0,0), (64,56,56,255), (), (), (0,0,0,255), (184,184,184,255)]
+    textFilePaths = ["SELECT1_12152.txt", "SELECT2_19912.txt", "SELECT3_28788.txt", "SELECT4_4180.txt"]
+    #textFilePaths = ["SELECT1_12152.txt", "SELECT3_28788.txt", "SELECT4_4180.txt"]
+    tableFilePath = "table.txt"
+    ANMFilePath = "PS1_Base_Project/cd/working/SZGRP/SEL_ANS.PAC"
+    offsets = [12152, 19912, 28788, 4180]
+    #offsets = [12152, 28788, 4180]
+    newANMs = injectText(ANMFilePath, offsets, images, insertionAreaTPNs, insertionAreas, fontImagePath, fontCLUT, textFilePaths, tableFilePath, kerning = 1)
+    
+    anm_numbers = getAnmNumbers(ANMFilePath, offsets)
+    for anmID in range(len(newANMs)):
+        editPAC(ANMFilePath, anm_numbers[anmID], repackANM(newANMs[anmID]))
+
+    #editPAC(ANMFilePath, 0, repackANM(newANMs[0]))
+
+    return
+
+
 
 def testInjectTextTIM():
     BNOs = [["PS1_Base_Project/cd/working/ANM/GUID_PXL.PAC",0xC],  ["PS1_Base_Project/cd/working/ANM/GUID_PXL.PAC",0x8020]]

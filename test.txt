@@ -166,7 +166,8 @@ The [BLUE]cats[BLACK] will scratch themselves by the
 [RED]Bath Tub[BLACK] when they're [BLUE]dirty[BLACK].
 
 <<<SEQUENCE 43>>> StartPoint=(0,24)
-So [BLUE]pick up[BLACK] and [BLUE]drop[BLACK] them in the [RED]Tub[BLACK]!
+So [BLUE]pick them up[BLACK] and [BLUE]drop[BLACK] them in
+the [RED]Tub[BLACK]!
 
 <<<SEQUENCE 44>>> StartPoint=(0,24)
 Use the [BLUE]Grab Cursor[BLACK] to lift them above
@@ -178,7 +179,7 @@ on their own.
 
 <<<SEQUENCE 46>>> StartPoint=(0,24)
 Once they've finished [BLUE]Shampooing[BLACK],
-take them out of the Bath Tub.
+take them out of the [RED]Bath Tub[BLACK].
 
 <<<SEQUENCE 47>>> StartPoint=(0,24)
 Has the [BLUE]Love Meter[BLACK] filled up?
@@ -212,7 +213,8 @@ feed them.
 The [BLUE]Love Meter[BLACK] hasn't been increasing.
 
 <<<SEQUENCE 56>>> StartPoint=(0,24)
-Use the [BLUE]Fox Tail[BLACK] to get both cats to play together.
+Use the [BLUE]Fox Tail[BLACK] to get both cats
+to play together.
 
 <<<SEQUENCE 57>>> StartPoint=(0,24)
 During [BLUE]Special Time[BLACK], the [BLUE]Love Meter[BLACK]

@@ -9,7 +9,10 @@ def build():
     stdout, stderr = p.communicate()
 
     os.chdir("..")
+    ImageProcessor.injectSelectText()
     ImageProcessor.injectStocks("STOCK_IMAGES", "STOCK_IMAGES_ORIGINAL")
+    
+    ImageProcessor.injectFailText()
     ImageProcessor.injectOptionsText()
     ImageProcessor.injectGuideText()
     ImageProcessor.injectBigText()
