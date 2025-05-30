@@ -18,13 +18,13 @@ great with women.
 Playful and carefree.
 Unbound by rules, he
 goes his own way in
-life. Eccentric.
+life. An oddball.
 
 <<<SEQUENCE 3>>> StartPoint=(76,52) Keeps=[0,1,2,3]
-A lady-killer who grew up
-on the downtown streets.
-He acts tough, but has
-a softer side deep down.
+A lady-killer from
+the downtown alleys.
+Acts tough, but
+craves company.
 
 <<<SEQUENCE 4>>> StartPoint=(73,52) Keeps=[0,1,2,3]
 Soft and gentle, but

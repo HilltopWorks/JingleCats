@@ -38,10 +38,10 @@ An annoying square
 Can't let my guard down!
 
 <<<SEQUENCE 12>>> StartPoint=(0,2)
-We live in different worlds...
+We're from different worlds...
 
 <<<SEQUENCE 13>>> StartPoint=(0,2)
-My favorite cat!
+A gal like no other
 
 <<<SEQUENCE 14>>> StartPoint=(0,2)
 He's really reliable

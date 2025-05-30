@@ -5,6 +5,7 @@ import filecmp
 import re
 import os
 import numpy as np
+import subprocess
 import ImageHill
 import sys
 from pathlib import Path
@@ -1364,6 +1365,7 @@ def arrangeTextIntoImage(wordList, insertionAreas, fontImage, fontColumns, fontH
             wordWidth += letterWidth
             letterBounds.append([letterWidths[letterCoordinate][0], letterWidths[letterCoordinate][1]])
         
+        wordWidth += (4 - (wordWidth%4))%4 #CHECK THISSSS
         isWidthFound = False
         #Check each insertion area row by row until space is found to fit it
         for insertionAreaNumber in range(len(insertionAreas)):
@@ -1561,10 +1563,11 @@ def readSpritesFromText(line, wordList, wordCoords, fontList, imageList, current
             for letter in wordCoordinate[3]:
                 letterWidth = letter[1] - letter[0] + 1
                 width += letterWidth + LETTER_WHITESPACE
-
+            bufWidth = width
+            bufWidth += (4 - (width%4))%4
             height = fontHeight
             
-            sprite = SPRITE(wordU, wordV, startPoint[0], startPoint[1], currentFont.CLX, currentFont.CLY, currentFont.ABE, spriteTPN,  currentFont.ABR, currentFont.TPF, 0, 0, 0, width, height, DEFAULT_ROTATION, DEFAULT_FLAG2_RESERVE, currentFont.CSN, spriteBNO, DEFAULT_SCALING, DEFAULT_SCALING)
+            sprite = SPRITE(wordU, wordV, startPoint[0], startPoint[1], currentFont.CLX, currentFont.CLY, currentFont.ABE, spriteTPN,  currentFont.ABR, currentFont.TPF, 0, 0, 0, bufWidth, height, DEFAULT_ROTATION, DEFAULT_FLAG2_RESERVE, currentFont.CSN, spriteBNO, DEFAULT_SCALING, DEFAULT_SCALING)
             sprites.append(sprite)
             startPoint[0] += width
             line = line.replace(longestMatch, '', 1)
@@ -1774,8 +1777,16 @@ def injectText(ANMFilePath, ANMOffsets, images, TPNs, insertionAreas, fontImageP
     
     #Load font image and read parameters
     fontImage = Image.open(fontImagePath).convert("RGBA")
-    
+    injectionPixels = []
+    for areaNumber  in range(len(insertionAreas)):
 
+        width = insertionAreas[areaNumber][1][0] - insertionAreas[areaNumber][0][0]
+        height = insertionAreas[areaNumber][1][1] - insertionAreas[areaNumber][0][1]
+        for y in range(height):
+            for x in range(width):
+                injectionPixels.append([x + insertionAreas[areaNumber][0][0], y + insertionAreas[areaNumber][0][1], 0, areaNumber])
+
+    
 
     tableFile = open(tableFilePath,'r', encoding="UTF8")
     header1 = tableFile.readline()
@@ -1794,14 +1805,14 @@ def injectText(ANMFilePath, ANMOffsets, images, TPNs, insertionAreas, fontImageP
 
     #Insertion area number, X, Y, letter bounds list for word
     wordCoords = arrangeTextIntoImage(wordList, insertionAreas, fontImage, numColumns, fontHeight, tableFilePath, fontCLUT, kerning)
-    injectionPixels = []
+    
     #Iterate over word objects, copying each letter to target area
     for coordNumber in range(len(wordCoords)):
         insertionAreaNumber = wordCoords[coordNumber][0]
         wordX = wordCoords[coordNumber][1]
         wordY = wordCoords[coordNumber][2]
         letterBounds = wordCoords[coordNumber][3]
-        
+
         word = wordList[coordNumber]
 
         
@@ -2898,10 +2909,46 @@ def injectStocks(EDIT_PNG_FOLDER, BASE_PNG_FOLDER):
             
     return
 
+VIDEO_NAMES = ["ENDING", "COMP", "OPEN"]
+VIDEOS = {"ENDING":42,
+          "COMP":39,
+          "OPEN":47}
 
+def replaceVideo(binPath, aviPath, indexNumber):
+    aviFileName = os.path.basename(aviPath)
+    aviDir = aviPath.replace(aviFileName, "")
+
+    frameDirName = aviFileName + "_FRAMES"
+    framesPath = os.path.join(aviDir, frameDirName)
+    os.makedirs(framesPath, exist_ok=True)
+    
+    #Convert video to frames
+    subprocess.call(["ffmpeg", "-i", aviPath, "-vf", "scale=304:240:force_original_aspect_ratio=decrease,pad=304:240:(ow-iw):0,setsar=1" , framesPath + r"/%04d.png"])
+    n_frames = len(os.listdir(framesPath))
+
+    #get index of game
+    subprocess.call(["java", "-jar", "jpsxdec.jar", "-f", binPath, "-x", "gameIndex.idx"])
+
+    #Construct xml file
+    xmlFileName = aviFileName.upper().replace(".AVI", ".XML")
+    xmlPath = os.path.join(aviDir, xmlFileName)
+
+    xmlFile = open(xmlPath, "w")
+
+    xmlFile.write("<?xml version=\"1.0\"?>\n<str-replace version=\"0.3\">\n")
+    for f in range(n_frames):
+        xmlFile.write("\t<replace frame=\"" + str(f+1) + "\">" + framesPath + "/" + str(f+1).zfill(4) + ".png</replace>\n")
+    xmlFile.write("</str-replace>")
+    xmlFile.close()
+    #inject frames
+    subprocess.call(["java", "-jar", "jpsxdec.jar", "-x", "gameIndex.idx", "-i", str(indexNumber), "-replaceframes", xmlPath])
+    return
+
+
+
+#replaceVideo("PS1_Base_Project/cd/test_project_working.bin", "FMV/MOVIE/LOGO_TEST.avi", 45)
 #extractCatFrames(r"mkpsxiso\JingleCats\CAT\TWIZZLER.FRM", "CATS")
 #testANMReadingLoad()
-#getCLUTentries(r"C:\Users\alibu\Desktop\tentatives\JingleCats\JingleCatsEnglishTranslation\mkpsxiso\JingleCats\SZGRP\OPT.CLS", 3, doprint=True)
 #injectBigText()
 #injectGuideText()
 #testANMReadingSave2()

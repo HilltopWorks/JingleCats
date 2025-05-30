@@ -196,6 +196,6 @@ actually a softie.
 
 <<<SEQUENCE 33>>> StartPoint=(6,6) Keeps=[0]
 Sprocket has a
-dangerous air about
+dangerous air to
 him. Us ladies need
 to take care.

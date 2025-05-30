@@ -1,0 +1,5 @@
+jPSXdec: PSX media decoder (non-commercial) v2.0
+Windows 10 10.0
+Java 18.0.1
+May 29, 2025, 9:35:50 PM
+[SEVERE] ERROR: jpsxdec.cdreaders.CdFileSectorReader$CdReopenException: java.io.FileNotFoundException: mkpsxiso\JC.bin (The process cannot access the file because it is being used by another process) (CdReopenException)

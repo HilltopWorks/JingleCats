@@ -1,0 +1,185 @@
+[jPSXdec v1.06 (beta) + Aconcagua replace]
+; Lines that begin with ; are ignored
+Filename:C:\Users\alibu\Downloads\ps1\jingle cats\Ai to Yuujou no Neko Monogatari. - Jingle Cats - Love Para Daisakusen no Maki (Japan)\Ai to Yuujou no Neko Monogatari. - Jingle Cats - Love Para Daisakusen no Maki (Japan) (Track 1).bin|Sector size:2352|Sector count:136784|First sector offset:0
+#:0|ID:SYSTEM.CNF|Sectors:23-23|Type:File|Size:68|Path:SYSTEM.CNF|Has mode 2 form 2:No|Has CD audio:No
+#:1|ID:BG/00.CLS|Sectors:26-30|Type:File|Size:8212|Path:BG/00.CLS|Has mode 2 form 2:No|Has CD audio:No
+#:2|ID:BG/01.CLS|Sectors:31-35|Type:File|Size:8212|Path:BG/01.CLS|Has mode 2 form 2:No|Has CD audio:No
+#:3|ID:BG/02.CLS|Sectors:36-40|Type:File|Size:8212|Path:BG/02.CLS|Has mode 2 form 2:No|Has CD audio:No
+#:4|ID:BG/BGD00.PAC|Sectors:41-69|Type:File|Size:58888|Path:BG/BGD00.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:5|ID:BG/BGD01.PAC|Sectors:70-102|Type:File|Size:67300|Path:BG/BGD01.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:6|ID:BG/BGD02.PAC|Sectors:103-135|Type:File|Size:67300|Path:BG/BGD02.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:7|ID:BG/CEL00.PAC|Sectors:136-143|Type:File|Size:15436|Path:BG/CEL00.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:8|ID:BG/CEL01.PAC|Sectors:144-151|Type:File|Size:15436|Path:BG/CEL01.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:9|ID:BG/CEL02.PAC|Sectors:152-159|Type:File|Size:15436|Path:BG/CEL02.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:10|ID:BG/OPEN.CLS|Sectors:160-164|Type:File|Size:8212|Path:BG/OPEN.CLS|Has mode 2 form 2:No|Has CD audio:No
+#:11|ID:BG/OPEN_BGD.PAC|Sectors:165-165|Type:File|Size:1216|Path:BG/OPEN_BGD.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:12|ID:BG/OPEN_CEL.PAC|Sectors:166-170|Type:File|Size:9040|Path:BG/OPEN_CEL.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:13|ID:BG/OPEN_PXL.PAC|Sectors:171-299|Type:File|Size:262244|Path:BG/OPEN_PXL.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:14|ID:BG/PXL00.PAC|Sectors:300-396|Type:File|Size:196756|Path:BG/PXL00.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:15|ID:BG/PXL01.PAC|Sectors:397-493|Type:File|Size:196756|Path:BG/PXL01.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:16|ID:BG/PXL02.PAC|Sectors:494-590|Type:File|Size:196756|Path:BG/PXL02.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:17|ID:CAT/BINKY.FRM|Sectors:592-805|Type:File|Size:438272|Path:CAT/BINKY.FRM|Has mode 2 form 2:No|Has CD audio:No
+#:18|ID:CAT/BINKY.SEQ|Sectors:806-809|Type:File|Size:8072|Path:CAT/BINKY.SEQ|Has mode 2 form 2:No|Has CD audio:No
+#:19|ID:CAT/CHEESE.FRM|Sectors:810-1096|Type:File|Size:587776|Path:CAT/CHEESE.FRM|Has mode 2 form 2:No|Has CD audio:No
+#:20|ID:CAT/CHEESE.SEQ|Sectors:1097-1101|Type:File|Size:9192|Path:CAT/CHEESE.SEQ|Has mode 2 form 2:No|Has CD audio:No
+#:21|ID:CAT/CLARA.FRM|Sectors:1102-1356|Type:File|Size:522240|Path:CAT/CLARA.FRM|Has mode 2 form 2:No|Has CD audio:No
+#:22|ID:CAT/CLARA.SEQ|Sectors:1357-1361|Type:File|Size:8784|Path:CAT/CLARA.SEQ|Has mode 2 form 2:No|Has CD audio:No
+#:23|ID:CAT/CUEBALL.FRM|Sectors:1362-1581|Type:File|Size:450560|Path:CAT/CUEBALL.FRM|Has mode 2 form 2:No|Has CD audio:No
+#:24|ID:CAT/CUEBALL.SEQ|Sectors:1582-1585|Type:File|Size:7792|Path:CAT/CUEBALL.SEQ|Has mode 2 form 2:No|Has CD audio:No
+#:25|ID:CAT/GRAYMER.FRM|Sectors:1586-1835|Type:File|Size:512000|Path:CAT/GRAYMER.FRM|Has mode 2 form 2:No|Has CD audio:No
+#:26|ID:CAT/GRAYMER.SEQ|Sectors:1836-1839|Type:File|Size:7356|Path:CAT/GRAYMER.SEQ|Has mode 2 form 2:No|Has CD audio:No
+#:27|ID:CAT/MAX.FRM|Sectors:1840-2169|Type:File|Size:675840|Path:CAT/MAX.FRM|Has mode 2 form 2:No|Has CD audio:No
+#:28|ID:CAT/MAX.SEQ|Sectors:2170-2174|Type:File|Size:8492|Path:CAT/MAX.SEQ|Has mode 2 form 2:No|Has CD audio:No
+#:29|ID:CAT/PETUNIA.FRM|Sectors:2175-2350|Type:File|Size:360448|Path:CAT/PETUNIA.FRM|Has mode 2 form 2:No|Has CD audio:No
+#:30|ID:CAT/PETUNIA.SEQ|Sectors:2351-2355|Type:File|Size:8332|Path:CAT/PETUNIA.SEQ|Has mode 2 form 2:No|Has CD audio:No
+#:31|ID:CAT/SPROCKET.FRM|Sectors:2356-2610|Type:File|Size:522240|Path:CAT/SPROCKET.FRM|Has mode 2 form 2:No|Has CD audio:No
+#:32|ID:CAT/SPROCKET.SEQ|Sectors:2611-2614|Type:File|Size:8024|Path:CAT/SPROCKET.SEQ|Has mode 2 form 2:No|Has CD audio:No
+#:33|ID:CAT/TWIZZLER.FRM|Sectors:2615-2923|Type:File|Size:632832|Path:CAT/TWIZZLER.FRM|Has mode 2 form 2:No|Has CD audio:No
+#:34|ID:CAT/TWIZZLER.SEQ|Sectors:2924-2928|Type:File|Size:9672|Path:CAT/TWIZZLER.SEQ|Has mode 2 form 2:No|Has CD audio:No
+#:35|ID:MOUSE/MOUSE00.DAT|Sectors:2930-2933|Type:File|Size:6272|Path:MOUSE/MOUSE00.DAT|Has mode 2 form 2:No|Has CD audio:No
+#:36|ID:MOUSE/MOUSE01.DAT|Sectors:2934-2936|Type:File|Size:4440|Path:MOUSE/MOUSE01.DAT|Has mode 2 form 2:No|Has CD audio:No
+#:37|ID:MOUSE/MOUSE02.DAT|Sectors:2937-2939|Type:File|Size:4552|Path:MOUSE/MOUSE02.DAT|Has mode 2 form 2:No|Has CD audio:No
+#:38|ID:MOVIE/COMP.STR|Sectors:2941-11724|Type:File|Size:17989632|Path:MOVIE/COMP.STR|Has mode 2 form 2:Yes|Has CD audio:No
+#:39|ID:MOVIE/COMP.STR[0]|Sectors:2941-11720|Type:Video|Dimensions:304x228|Frame Count:878|Sector Frames:2941-11711|Sectors/Frame:10/1|1st frame end sector:9|Disc Speed:2|Header Frames:1-878
+#:40|ID:MOVIE/COMP.STR[0.0]|Sectors:2948-11724|Type:XA|File:1|Channel:1|Stereo?:Yes|Samples/Sec:37800|Bits/Sample:4|Sector stride:8|Disc speed:2x
+#:41|ID:MOVIE/ENDING.STR|Sectors:11725-42092|Type:File|Size:62193664|Path:MOVIE/ENDING.STR|Has mode 2 form 2:Yes|Has CD audio:No
+#:42|ID:MOVIE/ENDING.STR[0]|Sectors:11725-42083|Type:Video|Dimensions:304x228|Frame Count:3036|Sector Frames:11725-42075|Sectors/Frame:10/1|1st frame end sector:9|Disc Speed:2|Header Frames:1-3036
+#:43|ID:MOVIE/ENDING.STR[0.0]|Sectors:11732-42092|Type:XA|File:1|Channel:1|Stereo?:Yes|Samples/Sec:37800|Bits/Sample:4|Sector stride:8|Disc speed:2x
+#:44|ID:MOVIE/LOGO.STR|Sectors:42093-46242|Type:File|Size:8499200|Path:MOVIE/LOGO.STR|Has mode 2 form 2:No|Has CD audio:No
+#:45|ID:MOVIE/LOGO.STR[0]|Sectors:42093-46242|Type:Video|Dimensions:304x228|Frame Count:415|Sector Frames:42093-46233|Sectors/Frame:10/1|1st frame end sector:9|Header Frames:1-415
+#:46|ID:MOVIE/OPEN.STR|Sectors:46243-56474|Type:File|Size:20955136|Path:MOVIE/OPEN.STR|Has mode 2 form 2:Yes|Has CD audio:No
+#:47|ID:MOVIE/OPEN.STR[0]|Sectors:46243-56472|Type:Video|Dimensions:304x228|Frame Count:1023|Sector Frames:46243-56463|Sectors/Frame:10/1|1st frame end sector:9|Disc Speed:2|Header Frames:1-1023
+#:48|ID:MOVIE/OPEN.STR[0.0]|Sectors:46250-56474|Type:XA|File:1|Channel:1|Stereo?:Yes|Samples/Sec:37800|Bits/Sample:4|Sector stride:8|Disc speed:2x
+#:49|ID:MOVIE/ST1.STR|Sectors:56475-66538|Type:File|Size:20611072|Path:MOVIE/ST1.STR|Has mode 2 form 2:Yes|Has CD audio:No
+#:50|ID:MOVIE/ST1.STR[0]|Sectors:56475-66534|Type:Video|Dimensions:304x228|Frame Count:1006|Sector Frames:56475-66525|Sectors/Frame:10/1|1st frame end sector:9|Disc Speed:2|Header Frames:1-1006
+#:51|ID:MOVIE/ST1.STR[0.0]|Sectors:56482-66538|Type:XA|File:1|Channel:1|Stereo?:Yes|Samples/Sec:37800|Bits/Sample:4|Sector stride:8|Disc speed:2x
+#:52|ID:MOVIE/ST2.STR|Sectors:66539-75362|Type:File|Size:18071552|Path:MOVIE/ST2.STR|Has mode 2 form 2:Yes|Has CD audio:No
+#:53|ID:MOVIE/ST2.STR[0]|Sectors:66539-75358|Type:Video|Dimensions:304x228|Frame Count:882|Sector Frames:66539-75349|Sectors/Frame:10/1|1st frame end sector:9|Disc Speed:2|Header Frames:1-882
+#:54|ID:MOVIE/ST2.STR[0.0]|Sectors:66546-75362|Type:XA|File:1|Channel:1|Stereo?:Yes|Samples/Sec:37800|Bits/Sample:4|Sector stride:8|Disc speed:2x
+#:55|ID:MOVIE/ST3.STR|Sectors:75363-81202|Type:File|Size:11960320|Path:MOVIE/ST3.STR|Has mode 2 form 2:Yes|Has CD audio:No
+#:56|ID:MOVIE/ST3.STR[0]|Sectors:75363-81201|Type:Video|Dimensions:304x228|Frame Count:584|Sector Frames:75363-81193|Sectors/Frame:10/1|1st frame end sector:9|Disc Speed:2|Header Frames:1-584
+#:57|ID:MOVIE/ST3.STR[0.0]|Sectors:75370-81202|Type:XA|File:1|Channel:1|Stereo?:Yes|Samples/Sec:37800|Bits/Sample:4|Sector stride:8|Disc speed:2x
+#:58|ID:MOVIE/ST4.STR|Sectors:81203-89186|Type:File|Size:16351232|Path:MOVIE/ST4.STR|Has mode 2 form 2:Yes|Has CD audio:No
+#:59|ID:MOVIE/ST4.STR[0]|Sectors:81203-89182|Type:Video|Dimensions:304x228|Frame Count:798|Sector Frames:81203-89173|Sectors/Frame:10/1|1st frame end sector:9|Disc Speed:2|Header Frames:1-798
+#:60|ID:MOVIE/ST4.STR[0.0]|Sectors:81210-89186|Type:XA|File:1|Channel:1|Stereo?:Yes|Samples/Sec:37800|Bits/Sample:4|Sector stride:8|Disc speed:2x
+#:61|ID:MOVIE/ST5.STR|Sectors:89187-100890|Type:File|Size:23969792|Path:MOVIE/ST5.STR|Has mode 2 form 2:Yes|Has CD audio:No
+#:62|ID:MOVIE/ST5.STR[0]|Sectors:89187-100886|Type:Video|Dimensions:304x228|Frame Count:1170|Sector Frames:89187-100877|Sectors/Frame:10/1|1st frame end sector:9|Disc Speed:2|Header Frames:1-1170
+#:63|ID:MOVIE/ST5.STR[0.0]|Sectors:89194-100890|Type:XA|File:1|Channel:1|Stereo?:Yes|Samples/Sec:37800|Bits/Sample:4|Sector stride:8|Disc speed:2x
+#:64|ID:MOVIE/ST6.STR|Sectors:100891-107626|Type:File|Size:13795328|Path:MOVIE/ST6.STR|Has mode 2 form 2:Yes|Has CD audio:No
+#:65|ID:MOVIE/ST6.STR[0]|Sectors:100891-107620|Type:Video|Dimensions:304x228|Frame Count:673|Sector Frames:100891-107611|Sectors/Frame:10/1|1st frame end sector:9|Disc Speed:2|Header Frames:1-673
+#:66|ID:MOVIE/ST6.STR[0.0]|Sectors:100898-107626|Type:XA|File:1|Channel:1|Stereo?:Yes|Samples/Sec:37800|Bits/Sample:4|Sector stride:8|Disc speed:2x
+#:67|ID:MOVIE/ST7.STR|Sectors:107627-114146|Type:File|Size:13352960|Path:MOVIE/ST7.STR|Has mode 2 form 2:Yes|Has CD audio:No
+#:68|ID:MOVIE/ST7.STR[0]|Sectors:107627-114145|Type:Video|Dimensions:304x228|Frame Count:652|Sector Frames:107627-114137|Sectors/Frame:10/1|1st frame end sector:9|Disc Speed:2|Header Frames:1-652
+#:69|ID:MOVIE/ST7.STR[0.0]|Sectors:107634-114146|Type:XA|File:1|Channel:1|Stereo?:Yes|Samples/Sec:37800|Bits/Sample:4|Sector stride:8|Disc speed:2x
+#:70|ID:MOVIE/ST8.STR|Sectors:114147-120946|Type:File|Size:13926400|Path:MOVIE/ST8.STR|Has mode 2 form 2:Yes|Has CD audio:No
+#:71|ID:MOVIE/ST8.STR[0]|Sectors:114147-120945|Type:Video|Dimensions:304x228|Frame Count:680|Sector Frames:114147-120937|Sectors/Frame:10/1|1st frame end sector:9|Disc Speed:2|Header Frames:1-680
+#:72|ID:MOVIE/ST8.STR[0.0]|Sectors:114154-120946|Type:XA|File:1|Channel:1|Stereo?:Yes|Samples/Sec:37800|Bits/Sample:4|Sector stride:8|Disc speed:2x
+#:73|ID:MOVIE/ST9.STR|Sectors:120947-132890|Type:File|Size:24461312|Path:MOVIE/ST9.STR|Has mode 2 form 2:Yes|Has CD audio:No
+#:74|ID:MOVIE/ST9.STR[0]|Sectors:120947-132886|Type:Video|Dimensions:304x228|Frame Count:1194|Sector Frames:120947-132877|Sectors/Frame:10/1|1st frame end sector:9|Disc Speed:2|Header Frames:1-1194
+#:75|ID:MOVIE/ST9.STR[0.0]|Sectors:120954-132890|Type:XA|File:1|Channel:1|Stereo?:Yes|Samples/Sec:37800|Bits/Sample:4|Sector stride:8|Disc speed:2x
+#:76|ID:SOUND/BGM01.SEP|Sectors:132892-132902|Type:File|Size:21021|Path:SOUND/BGM01.SEP|Has mode 2 form 2:No|Has CD audio:No
+#:77|ID:SOUND/BGM01.VB|Sectors:132903-133136|Type:File|Size:478944|Path:SOUND/BGM01.VB|Has mode 2 form 2:No|Has CD audio:No
+#:78|ID:SOUND/BGM01.VH|Sectors:133137-133157|Type:File|Size:41504|Path:SOUND/BGM01.VH|Has mode 2 form 2:No|Has CD audio:No
+#:79|ID:SOUND/BGM02.SEP|Sectors:133158-133168|Type:File|Size:20755|Path:SOUND/BGM02.SEP|Has mode 2 form 2:No|Has CD audio:No
+#:80|ID:SOUND/BGM02.VB|Sectors:133169-133395|Type:File|Size:463328|Path:SOUND/BGM02.VB|Has mode 2 form 2:No|Has CD audio:No
+#:81|ID:SOUND/BGM02.VH|Sectors:133396-133416|Type:File|Size:41504|Path:SOUND/BGM02.VH|Has mode 2 form 2:No|Has CD audio:No
+#:82|ID:SOUND/BGM03.SEP|Sectors:133417-133434|Type:File|Size:35924|Path:SOUND/BGM03.SEP|Has mode 2 form 2:No|Has CD audio:No
+#:83|ID:SOUND/BGM03.VB|Sectors:133435-133674|Type:File|Size:490032|Path:SOUND/BGM03.VB|Has mode 2 form 2:No|Has CD audio:No
+#:84|ID:SOUND/BGM03.VH|Sectors:133675-133695|Type:File|Size:41504|Path:SOUND/BGM03.VH|Has mode 2 form 2:No|Has CD audio:No
+#:85|ID:SOUND/JINGLE.VB|Sectors:133696-133901|Type:File|Size:421104|Path:SOUND/JINGLE.VB|Has mode 2 form 2:No|Has CD audio:No
+#:86|ID:SOUND/JINGLE.VH|Sectors:133902-133906|Type:File|Size:9248|Path:SOUND/JINGLE.VH|Has mode 2 form 2:No|Has CD audio:No
+#:87|ID:SZGRP/COMMON.CLS|Sectors:133908-133912|Type:File|Size:8212|Path:SZGRP/COMMON.CLS|Has mode 2 form 2:No|Has CD audio:No
+#:88|ID:SZGRP/OPT.CLS|Sectors:133913-133917|Type:File|Size:8212|Path:SZGRP/OPT.CLS|Has mode 2 form 2:No|Has CD audio:No
+#:89|ID:SZGRP/OPT_ANS.PAC|Sectors:133918-133921|Type:File|Size:7540|Path:SZGRP/OPT_ANS.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:90|ID:SZGRP/OPT_MAP.PAC|Sectors:133922-133934|Type:File|Size:24760|Path:SZGRP/OPT_MAP.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:91|ID:SZGRP/OPT_PXL.PAC|Sectors:133935-134015|Type:File|Size:163964|Path:SZGRP/OPT_PXL.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:92|ID:SZGRP/SEL0_PXL.PAC|Sectors:134016-134112|Type:File|Size:196756|Path:SZGRP/SEL0_PXL.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:93|ID:SZGRP/SEL1_PXL.PAC|Sectors:134113-134193|Type:File|Size:163964|Path:SZGRP/SEL1_PXL.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:94|ID:SZGRP/SEL_ANS.PAC|Sectors:134194-134210|Type:File|Size:32808|Path:SZGRP/SEL_ANS.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:95|ID:SZGRP/SEL_MAP.PAC|Sectors:134211-134232|Type:File|Size:43608|Path:SZGRP/SEL_MAP.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:96|ID:SZGRP/TTL.CLS|Sectors:134233-134237|Type:File|Size:8212|Path:SZGRP/TTL.CLS|Has mode 2 form 2:No|Has CD audio:No
+#:97|ID:SZGRP/TTL_ANS.PAC|Sectors:134238-134238|Type:File|Size:712|Path:SZGRP/TTL_ANS.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:98|ID:SZGRP/TTL_MAP.PAC|Sectors:134239-134241|Type:File|Size:5652|Path:SZGRP/TTL_MAP.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:99|ID:SZGRP/TTL_PXL.PAC|Sectors:134242-134370|Type:File|Size:262244|Path:SZGRP/TTL_PXL.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:100|ID:SZINGAME/FEF0_PXL.PAC|Sectors:134372-134436|Type:File|Size:131172|Path:SZINGAME/FEF0_PXL.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:101|ID:SZINGAME/FEF1_PXL.PAC|Sectors:134437-134501|Type:File|Size:131172|Path:SZINGAME/FEF1_PXL.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:102|ID:SZINGAME/FEF2_PXL.PAC|Sectors:134502-134566|Type:File|Size:131172|Path:SZINGAME/FEF2_PXL.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:103|ID:SZINGAME/FEF3_PXL.PAC|Sectors:134567-134631|Type:File|Size:131172|Path:SZINGAME/FEF3_PXL.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:104|ID:SZINGAME/FEF4_PXL.PAC|Sectors:134632-134696|Type:File|Size:131172|Path:SZINGAME/FEF4_PXL.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:105|ID:SZINGAME/FEM0_PXL.PAC|Sectors:134697-134761|Type:File|Size:131172|Path:SZINGAME/FEM0_PXL.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:106|ID:SZINGAME/FEM1_PXL.PAC|Sectors:134762-134826|Type:File|Size:131172|Path:SZINGAME/FEM1_PXL.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:107|ID:SZINGAME/FEM2_PXL.PAC|Sectors:134827-134891|Type:File|Size:131172|Path:SZINGAME/FEM2_PXL.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:108|ID:SZINGAME/FEM3_PXL.PAC|Sectors:134892-134956|Type:File|Size:131172|Path:SZINGAME/FEM3_PXL.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:109|ID:SZINGAME/FEM4_PXL.PAC|Sectors:134957-135021|Type:File|Size:131172|Path:SZINGAME/FEM4_PXL.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:110|ID:SZINGAME/FE_ANS.PAC|Sectors:135022-135026|Type:File|Size:9384|Path:SZINGAME/FE_ANS.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:111|ID:SZINGAME/FE_MAP.PAC|Sectors:135027-135034|Type:File|Size:15288|Path:SZINGAME/FE_MAP.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:112|ID:SZINGAME/PREF_ANS.PAC|Sectors:135035-135035|Type:File|Size:80|Path:SZINGAME/PREF_ANS.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:113|ID:SZINGAME/STAT_ANS.PAC|Sectors:135036-135037|Type:File|Size:2304|Path:SZINGAME/STAT_ANS.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:114|ID:SZINGAME/STAT_MAP.PAC|Sectors:135038-135038|Type:File|Size:1580|Path:SZINGAME/STAT_MAP.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:115|ID:SZINGAME/STAT_PXL.PAC|Sectors:135039-135055|Type:File|Size:32796|Path:SZINGAME/STAT_PXL.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:116|ID:SZINGAME/WAI0_PXL.PAC|Sectors:135056-135088|Type:File|Size:65564|Path:SZINGAME/WAI0_PXL.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:117|ID:SZINGAME/WAI1_PXL.PAC|Sectors:135089-135121|Type:File|Size:65564|Path:SZINGAME/WAI1_PXL.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:118|ID:SZINGAME/WAIT.CLS|Sectors:135122-135126|Type:File|Size:8212|Path:SZINGAME/WAIT.CLS|Has mode 2 form 2:No|Has CD audio:No
+#:119|ID:SZINGAME/WAIT_MAP.PAC|Sectors:135127-135135|Type:File|Size:16828|Path:SZINGAME/WAIT_MAP.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:120|ID:SZSTAGE/ST0.CLS|Sectors:135137-135141|Type:File|Size:8212|Path:SZSTAGE/ST0.CLS|Has mode 2 form 2:No|Has CD audio:No
+#:121|ID:SZSTAGE/ST0_PXL.PAC|Sectors:135142-135206|Type:File|Size:131124|Path:SZSTAGE/ST0_PXL.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:122|ID:SZSTAGE/ST1.CLS|Sectors:135207-135211|Type:File|Size:8212|Path:SZSTAGE/ST1.CLS|Has mode 2 form 2:No|Has CD audio:No
+#:123|ID:SZSTAGE/ST1_PXL.PAC|Sectors:135212-135276|Type:File|Size:131124|Path:SZSTAGE/ST1_PXL.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:124|ID:SZSTAGE/ST2.CLS|Sectors:135277-135281|Type:File|Size:8212|Path:SZSTAGE/ST2.CLS|Has mode 2 form 2:No|Has CD audio:No
+#:125|ID:SZSTAGE/ST2_PXL.PAC|Sectors:135282-135346|Type:File|Size:131124|Path:SZSTAGE/ST2_PXL.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:126|ID:SZSTAGE/ST3.CLS|Sectors:135347-135351|Type:File|Size:8212|Path:SZSTAGE/ST3.CLS|Has mode 2 form 2:No|Has CD audio:No
+#:127|ID:SZSTAGE/ST3_PXL.PAC|Sectors:135352-135416|Type:File|Size:131124|Path:SZSTAGE/ST3_PXL.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:128|ID:SZSTAGE/ST4.CLS|Sectors:135417-135421|Type:File|Size:8212|Path:SZSTAGE/ST4.CLS|Has mode 2 form 2:No|Has CD audio:No
+#:129|ID:SZSTAGE/ST4_PXL.PAC|Sectors:135422-135486|Type:File|Size:131124|Path:SZSTAGE/ST4_PXL.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:130|ID:SZSTAGE/ST5.CLS|Sectors:135487-135491|Type:File|Size:8212|Path:SZSTAGE/ST5.CLS|Has mode 2 form 2:No|Has CD audio:No
+#:131|ID:SZSTAGE/ST5_PXL.PAC|Sectors:135492-135556|Type:File|Size:131124|Path:SZSTAGE/ST5_PXL.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:132|ID:SZSTAGE/ST6.CLS|Sectors:135557-135561|Type:File|Size:8212|Path:SZSTAGE/ST6.CLS|Has mode 2 form 2:No|Has CD audio:No
+#:133|ID:SZSTAGE/ST6_PXL.PAC|Sectors:135562-135626|Type:File|Size:131124|Path:SZSTAGE/ST6_PXL.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:134|ID:SZSTAGE/ST7.CLS|Sectors:135627-135631|Type:File|Size:8212|Path:SZSTAGE/ST7.CLS|Has mode 2 form 2:No|Has CD audio:No
+#:135|ID:SZSTAGE/ST7_PXL.PAC|Sectors:135632-135696|Type:File|Size:131124|Path:SZSTAGE/ST7_PXL.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:136|ID:SZSTAGE/ST8.CLS|Sectors:135697-135701|Type:File|Size:8212|Path:SZSTAGE/ST8.CLS|Has mode 2 form 2:No|Has CD audio:No
+#:137|ID:SZSTAGE/ST8_PXL.PAC|Sectors:135702-135766|Type:File|Size:131124|Path:SZSTAGE/ST8_PXL.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:138|ID:SZSTAGE/ST9.CLS|Sectors:135767-135771|Type:File|Size:8212|Path:SZSTAGE/ST9.CLS|Has mode 2 form 2:No|Has CD audio:No
+#:139|ID:SZSTAGE/ST9_PXL.PAC|Sectors:135772-135836|Type:File|Size:131124|Path:SZSTAGE/ST9_PXL.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:140|ID:SZSTAGE/ST_MAP.PAC|Sectors:135837-135845|Type:File|Size:16828|Path:SZSTAGE/ST_MAP.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:141|ID:SZSYSTEM/LOD0_PXL.PAC|Sectors:135847-135863|Type:File|Size:32796|Path:SZSYSTEM/LOD0_PXL.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:142|ID:SZSYSTEM/LOD1_PXL.PAC|Sectors:135864-135880|Type:File|Size:32796|Path:SZSYSTEM/LOD1_PXL.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:143|ID:SZSYSTEM/LOD_ANS.PAC|Sectors:135881-135883|Type:File|Size:5320|Path:SZSYSTEM/LOD_ANS.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:144|ID:SZSYSTEM/LOD_MAP.PAC|Sectors:135884-135888|Type:File|Size:8256|Path:SZSYSTEM/LOD_MAP.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:145|ID:SZSYSTEM/MEM_ICON.PAC|Sectors:135889-135890|Type:File|Size:4072|Path:SZSYSTEM/MEM_ICON.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:146|ID:SZSYSTEM/MEM_ICON.PAC[0]|Sectors:135889-135889|Type:Tim|Start Offset:40|Dimensions:16x48|Palettes:1|Bpp:4
+#:147|ID:SZSYSTEM/MEM_ICON.PAC[1]|Sectors:135889-135889|Type:Tim|Start Offset:488|Dimensions:16x48|Palettes:1|Bpp:4
+#:148|ID:SZSYSTEM/MEM_ICON.PAC[2]|Sectors:135889-135889|Type:Tim|Start Offset:936|Dimensions:16x48|Palettes:1|Bpp:4
+#:149|ID:SZSYSTEM/MEM_ICON.PAC[3]|Sectors:135889-135889|Type:Tim|Start Offset:1384|Dimensions:16x48|Palettes:1|Bpp:4
+#:150|ID:SZSYSTEM/MEM_ICON.PAC[4]|Sectors:135889-135890|Type:Tim|Start Offset:1832|Dimensions:16x48|Palettes:1|Bpp:4
+#:151|ID:SZSYSTEM/MEM_ICON.PAC[5]|Sectors:135890-135890|Type:Tim|Start Offset:232|Dimensions:16x48|Palettes:1|Bpp:4
+#:152|ID:SZSYSTEM/MEM_ICON.PAC[6]|Sectors:135890-135890|Type:Tim|Start Offset:680|Dimensions:16x48|Palettes:1|Bpp:4
+#:153|ID:SZSYSTEM/MEM_ICON.PAC[7]|Sectors:135890-135890|Type:Tim|Start Offset:1128|Dimensions:16x48|Palettes:1|Bpp:4
+#:154|ID:SZSYSTEM/MEM_ICON.PAC[8]|Sectors:135890-135890|Type:Tim|Start Offset:1576|Dimensions:16x48|Palettes:1|Bpp:4
+#:155|ID:SZSYSTEM/REC0_PXL.PAC|Sectors:135891-135907|Type:File|Size:32796|Path:SZSYSTEM/REC0_PXL.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:156|ID:SZSYSTEM/REC1_PXL.PAC|Sectors:135908-135924|Type:File|Size:32796|Path:SZSYSTEM/REC1_PXL.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:157|ID:SZSYSTEM/REC_ANS.PAC|Sectors:135925-135926|Type:File|Size:3700|Path:SZSYSTEM/REC_ANS.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:158|ID:SZSYSTEM/REC_MAP.PAC|Sectors:135927-135933|Type:File|Size:14108|Path:SZSYSTEM/REC_MAP.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:159|ID:SZSYSTEM/SAV0_PXL.PAC|Sectors:135934-135950|Type:File|Size:32796|Path:SZSYSTEM/SAV0_PXL.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:160|ID:SZSYSTEM/SAV1_PXL.PAC|Sectors:135951-135967|Type:File|Size:32796|Path:SZSYSTEM/SAV1_PXL.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:161|ID:SZSYSTEM/SAV_ANS.PAC|Sectors:135968-135970|Type:File|Size:5320|Path:SZSYSTEM/SAV_ANS.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:162|ID:SZSYSTEM/SAV_MAP.PAC|Sectors:135971-135975|Type:File|Size:8256|Path:SZSYSTEM/SAV_MAP.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:163|ID:SZSYSTEM/SYS0_PXL.PAC|Sectors:135976-135992|Type:File|Size:32796|Path:SZSYSTEM/SYS0_PXL.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:164|ID:SZSYSTEM/SYS1_PXL.PAC|Sectors:135993-136009|Type:File|Size:32796|Path:SZSYSTEM/SYS1_PXL.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:165|ID:SZSYSTEM/SYS_ANS.PAC|Sectors:136010-136011|Type:File|Size:2088|Path:SZSYSTEM/SYS_ANS.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:166|ID:SZSYSTEM/SYS_MAP.PAC|Sectors:136012-136016|Type:File|Size:8256|Path:SZSYSTEM/SYS_MAP.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:167|ID:ANM/ANM.PAC|Sectors:136018-136093|Type:File|Size:154096|Path:ANM/ANM.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:168|ID:ANM/BOX_ANS.PAC|Sectors:136094-136094|Type:File|Size:688|Path:ANM/BOX_ANS.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:169|ID:ANM/BOX_PXL.PAC|Sectors:136095-136111|Type:File|Size:32796|Path:ANM/BOX_PXL.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:170|ID:ANM/FAIL_ANS.PAC|Sectors:136112-136113|Type:File|Size:2180|Path:ANM/FAIL_ANS.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:171|ID:ANM/FAIL_PXL.PAC|Sectors:136114-136130|Type:File|Size:32796|Path:ANM/FAIL_PXL.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:172|ID:ANM/GUID_ANS.PAC|Sectors:136131-136137|Type:File|Size:13908|Path:ANM/GUID_ANS.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:173|ID:ANM/GUID_PXL.PAC|Sectors:136138-136170|Type:File|Size:65588|Path:ANM/GUID_PXL.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:174|ID:ANM/P00.CLS|Sectors:136171-136175|Type:File|Size:8212|Path:ANM/P00.CLS|Has mode 2 form 2:No|Has CD audio:No
+#:175|ID:ANM/PIX.PAC|Sectors:136176-136288|Type:File|Size:229548|Path:ANM/PIX.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:176|ID:ANM/SEX_ANS.PAC|Sectors:136289-136289|Type:File|Size:80|Path:ANM/SEX_ANS.PAC|Has mode 2 form 2:No|Has CD audio:No
+#:177|ID:SLPS_014.09|Sectors:136290-136633|Type:File|Size:704512|Path:SLPS_014.09|Has mode 2 form 2:No|Has CD audio:No
+#:178|ID:DA/TITLE.DA|Sectors:136934-146316|Type:File|Size:19216384|Path:DA/TITLE.DA|Has mode 2 form 2:No|Has CD audio:No
+#:179|ID:DA/OPTION.DA|Sectors:146467-154710|Type:File|Size:16883712|Path:DA/OPTION.DA|Has mode 2 form 2:No|Has CD audio:No
+#:180|ID:DA/SCREEN.DA|Sectors:154861-164138|Type:File|Size:19001344|Path:DA/SCREEN.DA|Has mode 2 form 2:No|Has CD audio:No
+#:181|ID:DA/DUMMY.DA|Sectors:164289-178538|Type:File|Size:29184000|Path:DA/DUMMY.DA|Has mode 2 form 2:No|Has CD audio:No
