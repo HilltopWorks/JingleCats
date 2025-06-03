@@ -4,8 +4,8 @@
 <<<SEQUENCE 0>>> StartPoint=(88,101) Drops=[8,9,10,11,12]
 Oh  no!
 
-<<<SEQUENCE 0>>> StartPoint=(55,137)
+<<<SEQUENCE 0>>> StartPoint=(56,137)
 &
 
-<<<SEQUENCE 0>>> StartPoint=(111,137)
+<<<SEQUENCE 0>>> StartPoint=(113,137)
 feel  distant!

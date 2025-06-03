@@ -1,7 +1,7 @@
 jPSXdec: PSX media decoder (non-commercial) v2.0
 Windows 10 10.0
 Java 18.0.1
-May 29, 2025, 10:20:19 PM
+Jun 2, 2025, 9:39:57 AM
 [INFO] Replacing frame 1 with FMV\COMP_EDIT.avi_FRAMES\0001.png
 [INFO] Trying quantization scale 1 (smaller value is better quality but needs more space)
 [INFO] New frame 1 replacement size 21112 does not fit in the existing available size 18144

@@ -32,7 +32,8 @@ was too hungry.
 Try petting and keeping them full.
 
 <<<SEQUENCE 10>>> StartPoint=(0,0)
-Bathe the cats and keep the house clean.
+Bathe the cats and keep the
+house clean.
 
 <<<SEQUENCE 11>>> StartPoint=(0,0)
 The cats look hungry.
